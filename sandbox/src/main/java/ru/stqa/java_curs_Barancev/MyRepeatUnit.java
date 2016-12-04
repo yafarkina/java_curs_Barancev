@@ -8,7 +8,8 @@ public class MyRepeatUnit {
     hello("me") ;
 
     int l=5;
-    System.out.println("площадь прямоугольника, со стороной " + l + " равна " + square(l));
+    int s = square(l);
+    System.out.println("площадь прямоугольника, со стороной " + l + " равна " + s);
   }
 
  public static void hello (String samebody){
