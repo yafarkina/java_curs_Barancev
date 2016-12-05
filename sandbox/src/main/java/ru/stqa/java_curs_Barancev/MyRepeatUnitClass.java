@@ -7,18 +7,17 @@ public class MyRepeatUnitClass {
     hello("user") ;
     hello("me") ;
 
-    int l=5;
-    int s = square(l);
-    System.out.println("площадь прямоугольника, со стороной " + l + " равна " + s);
+    Square s = new Square ();
+    s.l=5;
+    System.out.println("площадь квадрата, со стороной " + s.l + " равна " + square(s));
   }
 
  public static void hello (String samebody){
    System.out.println("hello, " + samebody + "!");
  }
 
- public static int square (int l){
-   int s=l*l;
-   return s;
+ public static double square (Square s){
+   return s.l*s.l;
  }
 
 }
