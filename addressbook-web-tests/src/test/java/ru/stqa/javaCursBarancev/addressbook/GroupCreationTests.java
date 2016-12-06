@@ -26,7 +26,6 @@ public class GroupCreationTests {
     wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
     wd.get("http://localhost/addressbook/group.php");
-    wd.findElement(By.id("LoginForm")).click();
     wd.findElement(By.name("user")).click();
     wd.findElement(By.name("user")).clear();
     wd.findElement(By.name("user")).sendKeys("admin");
