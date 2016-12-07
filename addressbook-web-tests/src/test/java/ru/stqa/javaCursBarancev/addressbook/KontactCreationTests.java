@@ -6,6 +6,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.*;
+import ru.stqa.javaCursBarancev.addressbook.EmailDataKontact;
+import ru.stqa.javaCursBarancev.addressbook.ResonalDataKontact;
 
 public class KontactCreationTests {
     FirefoxDriver wd;
@@ -20,13 +22,13 @@ public class KontactCreationTests {
     
     @Test
     public void testKontactCreation() {
-        fillKontactFIO("first name", "middle name", "last name");
+        fillKontactFIO(new ResonalDataKontact("first name", "middle name", "last name"));
         fillKontactNickname("nickname");
         fillKontactTitle("title");
         fillKontactCompany("company");
         fillKontactAddress("address");
         fillKontactMobile("+79999999999");
-        fillKontactEmail("test1@test1.test1", "test2@test2.test2", "test3@.test3.test3");
+        fillKontactEmail(new EmailDataKontact("test1@test1.test1", "test2@test2.test2", "test3@.test3.test3"));
         fillKontactAddress2("address");
         fillKontactNotes("notes");
         submitKontactCreation();
@@ -53,16 +55,16 @@ public class KontactCreationTests {
         wd.findElement(By.name("address2")).sendKeys(address);
     }
 
-    private void fillKontactEmail(String email, String email2, String email3) {
+    private void fillKontactEmail(EmailDataKontact emailDataKontact) {
         wd.findElement(By.name("email")).click();
         wd.findElement(By.name("email")).clear();
-        wd.findElement(By.name("email")).sendKeys(email);
+        wd.findElement(By.name("email")).sendKeys(emailDataKontact.getEmail());
         wd.findElement(By.name("email2")).click();
         wd.findElement(By.name("email2")).clear();
-        wd.findElement(By.name("email2")).sendKeys(email2);
+        wd.findElement(By.name("email2")).sendKeys(emailDataKontact.getEmail2());
         wd.findElement(By.name("email3")).click();
         wd.findElement(By.name("email3")).clear();
-        wd.findElement(By.name("email3")).sendKeys(email3);
+        wd.findElement(By.name("email3")).sendKeys(emailDataKontact.getEmail3());
     }
 
     private void fillKontactMobile(String mobile) {
@@ -95,16 +97,16 @@ public class KontactCreationTests {
         wd.findElement(By.name("nickname")).sendKeys(nickname);
     }
 
-    private void fillKontactFIO(String firstname, String middlename, String lastname) {
+    private void fillKontactFIO(ResonalDataKontact resonalDataKontact) {
         wd.findElement(By.name("firstname")).click();
         wd.findElement(By.name("firstname")).clear();
-        wd.findElement(By.name("firstname")).sendKeys(firstname);
+        wd.findElement(By.name("firstname")).sendKeys(resonalDataKontact.getFirstname());
         wd.findElement(By.name("middlename")).click();
         wd.findElement(By.name("middlename")).clear();
-        wd.findElement(By.name("middlename")).sendKeys(middlename);
+        wd.findElement(By.name("middlename")).sendKeys(resonalDataKontact.getMiddlename());
         wd.findElement(By.name("lastname")).click();
         wd.findElement(By.name("lastname")).clear();
-        wd.findElement(By.name("lastname")).sendKeys(lastname);
+        wd.findElement(By.name("lastname")).sendKeys(resonalDataKontact.getLastname());
     }
 
     private void login(String username, String password) {
