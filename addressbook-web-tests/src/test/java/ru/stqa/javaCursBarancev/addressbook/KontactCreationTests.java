@@ -20,15 +20,7 @@ public class KontactCreationTests {
     
     @Test
     public void testKontactCreation() {
-        wd.findElement(By.name("firstname")).click();
-        wd.findElement(By.name("firstname")).clear();
-        wd.findElement(By.name("firstname")).sendKeys("first name");
-        wd.findElement(By.name("middlename")).click();
-        wd.findElement(By.name("middlename")).clear();
-        wd.findElement(By.name("middlename")).sendKeys("middle name");
-        wd.findElement(By.name("lastname")).click();
-        wd.findElement(By.name("lastname")).clear();
-        wd.findElement(By.name("lastname")).sendKeys("last name");
+        fillKontactFIO("first name", "middle name", "last name");
         wd.findElement(By.name("nickname")).click();
         wd.findElement(By.name("nickname")).clear();
         wd.findElement(By.name("nickname")).sendKeys("nickname");
@@ -62,6 +54,18 @@ public class KontactCreationTests {
         wd.findElement(By.name("notes")).sendKeys("notes");
         wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
         wd.findElement(By.linkText("home")).click();
+    }
+
+    private void fillKontactFIO(String firstname, String middlename, String lastname) {
+        wd.findElement(By.name("firstname")).click();
+        wd.findElement(By.name("firstname")).clear();
+        wd.findElement(By.name("firstname")).sendKeys(firstname);
+        wd.findElement(By.name("middlename")).click();
+        wd.findElement(By.name("middlename")).clear();
+        wd.findElement(By.name("middlename")).sendKeys(middlename);
+        wd.findElement(By.name("lastname")).click();
+        wd.findElement(By.name("lastname")).clear();
+        wd.findElement(By.name("lastname")).sendKeys(lastname);
     }
 
     private void login(String username, String password) {
