@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.*;
 import ru.stqa.javaCursBarancev.addressbook.EmailDataKontact;
-import ru.stqa.javaCursBarancev.addressbook.PeresonalDataKontact;
+import ru.stqa.javaCursBarancev.addressbook.PersonalDataKontact;
 
 public class KontactCreationTests {
     FirefoxDriver wd;
@@ -22,7 +22,7 @@ public class KontactCreationTests {
     
     @Test
     public void testKontactCreation() {
-        fillKontactFIO(new PeresonalDataKontact("first name", "middle name", "last name"));
+        fillKontactFIO(new PersonalDataKontact("first name", "middle name", "last name"));
         fillKontactNickname("nickname");
         fillKontactTitle("title");
         fillKontactCompany("company");
@@ -97,7 +97,7 @@ public class KontactCreationTests {
         wd.findElement(By.name("nickname")).sendKeys(nickname);
     }
 
-    private void fillKontactFIO(PeresonalDataKontact resonalDataKontact) {
+    private void fillKontactFIO(PersonalDataKontact resonalDataKontact) {
         wd.findElement(By.name("firstname")).click();
         wd.findElement(By.name("firstname")).clear();
         wd.findElement(By.name("firstname")).sendKeys(resonalDataKontact.getFirstname());
