@@ -1,11 +1,11 @@
 package ru.stqa.javaCursBarancev.addressbook;
 
-public class ResonalDataKontact {
+public class PeresonalDataKontact {
   private final String firstname;
   private final String middlename;
   private final String lastname;
 
-  public ResonalDataKontact(String firstname, String middlename, String lastname) {
+  public PeresonalDataKontact(String firstname, String middlename, String lastname) {
     this.firstname = firstname;
     this.middlename = middlename;
     this.lastname = lastname;
