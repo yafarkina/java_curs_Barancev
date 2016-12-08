@@ -6,10 +6,10 @@ package ru.stqa.java_curs_Barancev;
 public class Square {
   public double l;
 
-  public Square (double l) {
-    this.l=l;
+  public Square(double l){
+    this.l = l;
   }
-  public double square (){
+  public double square(){
     return this.l * this.l;
   }
 }
