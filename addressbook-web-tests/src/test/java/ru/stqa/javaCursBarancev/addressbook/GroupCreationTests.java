@@ -9,9 +9,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.*;
 
-public class GroupCreationTests {
-  FirefoxDriver wd;
-
+public class GroupCreationTests extends TestBase {
   @BeforeMethod
   public void setUp() throws Exception {
     wd = new FirefoxDriver();
