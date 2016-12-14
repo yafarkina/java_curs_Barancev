@@ -19,5 +19,4 @@ public class KontactCreationTests extends TestBase {
         submitKontactCreation();
         gotoHomePage();
     }
-
 }
