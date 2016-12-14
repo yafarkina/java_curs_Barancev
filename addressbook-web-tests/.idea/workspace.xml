@@ -25,14 +25,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ApplicationManadger.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ApplicationManadger.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/appmanager/ApplicationManadger.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="32" />
+            <state relative-caret-position="136">
+              <caret line="36" column="35" lean-forward="true" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
               <folding>
-                <element signature="e#5109#5110#0" expanded="true" />
-                <element signature="e#5137#5138#0" expanded="true" />
+                <element signature="e#5148#5149#0" expanded="true" />
+                <element signature="e#5176#5177#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -48,21 +48,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GroupHelper.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GroupHelper.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/appmanager/GroupHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="19" />
+            <state relative-caret-position="153">
+              <caret line="13" column="29" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#412#413#0" expanded="true" />
-                <element signature="e#471#472#0" expanded="true" />
-                <element signature="e#510#511#0" expanded="true" />
-                <element signature="e#561#562#0" expanded="true" />
-                <element signature="e#1198#1199#0" expanded="true" />
-                <element signature="e#1249#1250#0" expanded="true" />
-                <element signature="e#1280#1281#0" expanded="true" />
-                <element signature="e#1335#1336#0" expanded="true" />
+                <element signature="e#336#337#0" expanded="true" />
+                <element signature="e#358#359#0" expanded="true" />
+                <element signature="e#395#396#0" expanded="true" />
+                <element signature="e#443#444#0" expanded="true" />
+                <element signature="e#480#481#0" expanded="true" />
+                <element signature="e#539#540#0" expanded="true" />
+                <element signature="e#578#579#0" expanded="true" />
+                <element signature="e#629#630#0" expanded="true" />
+                <element signature="e#1266#1267#0" expanded="true" />
+                <element signature="e#1317#1318#0" expanded="true" />
+                <element signature="e#1348#1349#0" expanded="true" />
+                <element signature="e#1403#1404#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -361,8 +365,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/ApplicationManadger.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/appmanager/GroupHelper.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/appmanager/ApplicationManadger.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/appmanager/GroupHelper.java" />
       </list>
     </option>
   </component>
@@ -979,31 +983,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/appmanager/GroupHelper.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/appmanager/ApplicationManadger.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="19" />
+        <state relative-caret-position="136">
+          <caret line="36" column="35" lean-forward="true" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#412#413#0" expanded="true" />
-            <element signature="e#471#472#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-            <element signature="e#561#562#0" expanded="true" />
-            <element signature="e#1198#1199#0" expanded="true" />
-            <element signature="e#1249#1250#0" expanded="true" />
-            <element signature="e#1280#1281#0" expanded="true" />
-            <element signature="e#1335#1336#0" expanded="true" />
+            <element signature="e#5148#5149#0" expanded="true" />
+            <element signature="e#5176#5177#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/appmanager/ApplicationManadger.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/appmanager/GroupHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="32" />
+        <state relative-caret-position="153">
+          <caret line="13" column="29" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="38" />
           <folding>
-            <element signature="e#5109#5110#0" expanded="true" />
-            <element signature="e#5137#5138#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#336#337#0" expanded="true" />
+            <element signature="e#358#359#0" expanded="true" />
+            <element signature="e#395#396#0" expanded="true" />
+            <element signature="e#443#444#0" expanded="true" />
+            <element signature="e#480#481#0" expanded="true" />
+            <element signature="e#539#540#0" expanded="true" />
+            <element signature="e#578#579#0" expanded="true" />
+            <element signature="e#629#630#0" expanded="true" />
+            <element signature="e#1266#1267#0" expanded="true" />
+            <element signature="e#1317#1318#0" expanded="true" />
+            <element signature="e#1348#1349#0" expanded="true" />
+            <element signature="e#1403#1404#0" expanded="true" />
           </folding>
         </state>
       </provider>

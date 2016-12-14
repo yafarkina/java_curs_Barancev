@@ -34,6 +34,7 @@ public class ApplicationManadger {
     wd = new FirefoxDriver();
     wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     wd.get("http://localhost/addressbook/group.php");
+    groupHelper = new GroupHelper(wd);
     login("admin", "secret");
   }
 

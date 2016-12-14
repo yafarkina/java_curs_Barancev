@@ -11,7 +11,12 @@ public class GroupHelper {
 
   FirefoxDriver wd;
 
-  public void initGroupCreation() { wd.findElement(By.name("new")).click();
+  public GroupHelper(FirefoxDriver wd) {
+    this.wd = wd;
+  }
+
+  public void initGroupCreation() {
+    wd.findElement(By.name("new")).click();
   }
 
   public void returnToGroupPage() {
