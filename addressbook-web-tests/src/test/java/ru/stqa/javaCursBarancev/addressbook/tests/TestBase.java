@@ -1,4 +1,4 @@
-package ru.stqa.javaCursBarancev.addressbook;
+package ru.stqa.javaCursBarancev.addressbook.tests;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
