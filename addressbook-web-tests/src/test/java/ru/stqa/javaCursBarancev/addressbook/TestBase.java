@@ -6,17 +6,19 @@ import org.testng.annotations.BeforeMethod;
 /**
  * Created by yafar_000 on 14.12.2016.
  */
-public class TestBase extends ApplicationManadger {
+public class TestBase {
+
+  protected final ApplicationManadger app = new ApplicationManadger();
 
   @AfterMethod
 
   public void tearDown() {
-    stop();
+    app.stop();
   }
 
   @BeforeMethod
   public void setUp() throws Exception {
-    init();
+    app.init();
   }
 
 }
