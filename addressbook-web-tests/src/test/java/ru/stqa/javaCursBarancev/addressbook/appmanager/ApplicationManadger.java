@@ -1,9 +1,10 @@
-package ru.stqa.javaCursBarancev.addressbook;
+package ru.stqa.javaCursBarancev.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.javaCursBarancev.addressbook.EmailDataKontact;
+import ru.stqa.javaCursBarancev.addressbook.GroupData;
 import ru.stqa.javaCursBarancev.addressbook.PersonalDataKontact;
 
 import java.util.concurrent.TimeUnit;
