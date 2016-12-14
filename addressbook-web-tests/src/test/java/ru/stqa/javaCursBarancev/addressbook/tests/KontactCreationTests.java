@@ -8,7 +8,7 @@ public class KontactCreationTests extends TestBase {
 
     @Test
     public void testKontactCreation() {
-        app.gotoKontactPage();
+        app.getNavigationHelper().gotoKontactPage();
         app.fillKontactFIO(new PersonalDataKontact("first name", "middle name", "last name"));
         app.fillKontactNickname("nickname");
         app.fillKontactTitle("title");
@@ -19,6 +19,6 @@ public class KontactCreationTests extends TestBase {
         app.fillKontactAddress2("address");
         app.fillKontactNotes("notes");
         app.submitKontactCreation();
-        app.gotoHomePage();
+        app.getNavigationHelper().gotoHomePage();
     }
 }
