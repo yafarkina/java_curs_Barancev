@@ -27,7 +27,7 @@ public class ApplicationManadger {
   }
 
   public void stop() {
-    groupHelper.wd.quit();
+    wd.quit();
   }
 
   public void init() {
@@ -39,95 +39,95 @@ public class ApplicationManadger {
   }
 
   private void login(String username, String password) {
-    groupHelper.wd.findElement(By.name("user")).click();
-    groupHelper.wd.findElement(By.name("user")).clear();
-    groupHelper.wd.findElement(By.name("user")).sendKeys(username);
-    groupHelper.wd.findElement(By.name("pass")).click();
-    groupHelper.wd.findElement(By.name("pass")).clear();
-    groupHelper.wd.findElement(By.name("pass")).sendKeys(password);
-    groupHelper.wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
+    wd.findElement(By.name("user")).click();
+    wd.findElement(By.name("user")).clear();
+    wd.findElement(By.name("user")).sendKeys(username);
+    wd.findElement(By.name("pass")).click();
+    wd.findElement(By.name("pass")).clear();
+    wd.findElement(By.name("pass")).sendKeys(password);
+    wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
   }
 
   public void gotoGroupPage() {
-    groupHelper.wd.findElement(By.linkText("groups")).click();
+    wd.findElement(By.linkText("groups")).click();
   }
 
   public void gotoHomePage() {
-    groupHelper.wd.findElement(By.linkText("home")).click();
+    wd.findElement(By.linkText("home")).click();
   }
 
   public void submitKontactCreation() {
-    groupHelper.wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
+    wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
   }
 
   public void fillKontactNotes(String notes) {
-    groupHelper.wd.findElement(By.name("notes")).click();
-    groupHelper.wd.findElement(By.name("notes")).clear();
-    groupHelper.wd.findElement(By.name("notes")).sendKeys(notes);
+    wd.findElement(By.name("notes")).click();
+    wd.findElement(By.name("notes")).clear();
+    wd.findElement(By.name("notes")).sendKeys(notes);
   }
 
   public void fillKontactAddress2(String address) {
-    groupHelper.wd.findElement(By.name("address2")).click();
-    groupHelper.wd.findElement(By.name("address2")).clear();
-    groupHelper.wd.findElement(By.name("address2")).sendKeys(address);
+    wd.findElement(By.name("address2")).click();
+    wd.findElement(By.name("address2")).clear();
+    wd.findElement(By.name("address2")).sendKeys(address);
   }
 
   public void fillKontactEmail(EmailDataKontact emailDataKontact) {
-    groupHelper.wd.findElement(By.name("email")).click();
-    groupHelper.wd.findElement(By.name("email")).clear();
-    groupHelper.wd.findElement(By.name("email")).sendKeys(emailDataKontact.getEmail());
-    groupHelper.wd.findElement(By.name("email2")).click();
-    groupHelper.wd.findElement(By.name("email2")).clear();
-    groupHelper.wd.findElement(By.name("email2")).sendKeys(emailDataKontact.getEmail2());
-    groupHelper.wd.findElement(By.name("email3")).click();
-    groupHelper.wd.findElement(By.name("email3")).clear();
-    groupHelper.wd.findElement(By.name("email3")).sendKeys(emailDataKontact.getEmail3());
+    wd.findElement(By.name("email")).click();
+    wd.findElement(By.name("email")).clear();
+    wd.findElement(By.name("email")).sendKeys(emailDataKontact.getEmail());
+    wd.findElement(By.name("email2")).click();
+    wd.findElement(By.name("email2")).clear();
+    wd.findElement(By.name("email2")).sendKeys(emailDataKontact.getEmail2());
+    wd.findElement(By.name("email3")).click();
+    wd.findElement(By.name("email3")).clear();
+    wd.findElement(By.name("email3")).sendKeys(emailDataKontact.getEmail3());
   }
 
   public void fillKontactMobile(String mobile) {
-    groupHelper.wd.findElement(By.name("mobile")).click();
-    groupHelper.wd.findElement(By.name("mobile")).clear();
-    groupHelper.wd.findElement(By.name("mobile")).sendKeys(mobile);
+    wd.findElement(By.name("mobile")).click();
+    wd.findElement(By.name("mobile")).clear();
+    wd.findElement(By.name("mobile")).sendKeys(mobile);
   }
 
   public void fillKontactAddress(String address) {
-    groupHelper.wd.findElement(By.name("address")).click();
-    groupHelper.wd.findElement(By.name("address")).clear();
-    groupHelper.wd.findElement(By.name("address")).sendKeys(address);
+    wd.findElement(By.name("address")).click();
+    wd.findElement(By.name("address")).clear();
+    wd.findElement(By.name("address")).sendKeys(address);
   }
 
   public void fillKontactCompany(String company) {
-    groupHelper.wd.findElement(By.name("company")).click();
-    groupHelper.wd.findElement(By.name("company")).clear();
-    groupHelper.wd.findElement(By.name("company")).sendKeys(company);
+    wd.findElement(By.name("company")).click();
+    wd.findElement(By.name("company")).clear();
+    wd.findElement(By.name("company")).sendKeys(company);
   }
 
   public void fillKontactTitle(String title) {
-    groupHelper.wd.findElement(By.name("title")).click();
-    groupHelper.wd.findElement(By.name("title")).clear();
-    groupHelper.wd.findElement(By.name("title")).sendKeys(title);
+    wd.findElement(By.name("title")).click();
+    wd.findElement(By.name("title")).clear();
+    wd.findElement(By.name("title")).sendKeys(title);
   }
 
   public void fillKontactNickname(String nickname) {
-    groupHelper.wd.findElement(By.name("nickname")).click();
-    groupHelper.wd.findElement(By.name("nickname")).clear();
-    groupHelper.wd.findElement(By.name("nickname")).sendKeys(nickname);
+   wd.findElement(By.name("nickname")).click();
+    wd.findElement(By.name("nickname")).clear();
+    wd.findElement(By.name("nickname")).sendKeys(nickname);
   }
 
   public void fillKontactFIO(PersonalDataKontact resonalDataKontact) {
-    groupHelper.wd.findElement(By.name("firstname")).click();
-    groupHelper.wd.findElement(By.name("firstname")).clear();
-    groupHelper.wd.findElement(By.name("firstname")).sendKeys(resonalDataKontact.getFirstname());
-    groupHelper.wd.findElement(By.name("middlename")).click();
-    groupHelper.wd.findElement(By.name("middlename")).clear();
-    groupHelper.wd.findElement(By.name("middlename")).sendKeys(resonalDataKontact.getMiddlename());
-    groupHelper.wd.findElement(By.name("lastname")).click();
-    groupHelper.wd.findElement(By.name("lastname")).clear();
-    groupHelper.wd.findElement(By.name("lastname")).sendKeys(resonalDataKontact.getLastname());
+    wd.findElement(By.name("firstname")).click();
+    wd.findElement(By.name("firstname")).clear();
+   wd.findElement(By.name("firstname")).sendKeys(resonalDataKontact.getFirstname());
+    wd.findElement(By.name("middlename")).click();
+    wd.findElement(By.name("middlename")).clear();
+    wd.findElement(By.name("middlename")).sendKeys(resonalDataKontact.getMiddlename());
+    wd.findElement(By.name("lastname")).click();
+    wd.findElement(By.name("lastname")).clear();
+    wd.findElement(By.name("lastname")).sendKeys(resonalDataKontact.getLastname());
   }
 
   public void gotoKontactPage() {
-    groupHelper.wd.findElement(By.linkText("add new")).click();
+    wd.findElement(By.linkText("add new")).click();
   }
 
   public GroupHelper getGroupHelper() {
