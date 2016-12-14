@@ -1,4 +1,4 @@
-package ru.stqa.javaCursBarancev.addressbook;
+package ru.stqa.javaCursBarancev.addressbook.model;
 
 public class EmailDataKontact {
   private final String email;
