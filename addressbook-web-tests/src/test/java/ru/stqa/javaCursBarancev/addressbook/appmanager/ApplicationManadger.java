@@ -15,7 +15,7 @@ public class ApplicationManadger {
 
   FirefoxDriver wd;
 
-  private final GroupHelper groupHelper = new GroupHelper();
+  private GroupHelper groupHelper;
 
   public static boolean isAlertPresent(FirefoxDriver wd) {
     try {
