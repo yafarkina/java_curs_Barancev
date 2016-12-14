@@ -2,7 +2,7 @@ package ru.stqa.javaCursBarancev.addressbook.tests;
 
 
 import org.testng.annotations.Test;
-import ru.stqa.javaCursBarancev.addressbook.GroupData;
+import ru.stqa.javaCursBarancev.addressbook.model.GroupData;
 
 public class GroupCreationTests extends TestBase {
 

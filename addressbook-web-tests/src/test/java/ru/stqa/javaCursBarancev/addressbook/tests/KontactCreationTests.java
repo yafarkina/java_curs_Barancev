@@ -1,8 +1,8 @@
 package ru.stqa.javaCursBarancev.addressbook.tests;
 
 import org.testng.annotations.Test;
-import ru.stqa.javaCursBarancev.addressbook.EmailDataKontact;
-import ru.stqa.javaCursBarancev.addressbook.PersonalDataKontact;
+import ru.stqa.javaCursBarancev.addressbook.model.EmailDataKontact;
+import ru.stqa.javaCursBarancev.addressbook.model.PersonalDataKontact;
 
 public class KontactCreationTests extends TestBase {
 

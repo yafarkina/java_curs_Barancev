@@ -3,18 +3,18 @@ package ru.stqa.javaCursBarancev.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import ru.stqa.javaCursBarancev.addressbook.EmailDataKontact;
-import ru.stqa.javaCursBarancev.addressbook.GroupData;
-import ru.stqa.javaCursBarancev.addressbook.PersonalDataKontact;
+import ru.stqa.javaCursBarancev.addressbook.model.EmailDataKontact;
+import ru.stqa.javaCursBarancev.addressbook.model.GroupData;
+import ru.stqa.javaCursBarancev.addressbook.model.PersonalDataKontact;
 
 import java.util.concurrent.TimeUnit;
 
 /**
  * Created by yafar_000 on 14.12.2016.
  */
-public class ApplicationManadger {
+public class ApplicationManadger extends GroupHelper {
 
-  FirefoxDriver wd;
+  FirefoxDriver wd; 
 
   public static boolean isAlertPresent(FirefoxDriver wd) {
     try {
