@@ -84,6 +84,84 @@ public class TestBase {
   protected void selectGroup() {
       wd.findElement(By.name("selected[]")).click();
   }
+
+  protected void gotoHomePage() {
+      wd.findElement(By.linkText("home")).click();
+  }
+
+  protected void submitKontactCreation() {
+      wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
+  }
+
+  protected void fillKontactNotes(String notes) {
+      wd.findElement(By.name("notes")).click();
+      wd.findElement(By.name("notes")).clear();
+      wd.findElement(By.name("notes")).sendKeys(notes);
+  }
+
+  protected void fillKontactAddress2(String address) {
+      wd.findElement(By.name("address2")).click();
+      wd.findElement(By.name("address2")).clear();
+      wd.findElement(By.name("address2")).sendKeys(address);
+  }
+
+  protected void fillKontactEmail(EmailDataKontact emailDataKontact) {
+      wd.findElement(By.name("email")).click();
+      wd.findElement(By.name("email")).clear();
+      wd.findElement(By.name("email")).sendKeys(emailDataKontact.getEmail());
+      wd.findElement(By.name("email2")).click();
+      wd.findElement(By.name("email2")).clear();
+      wd.findElement(By.name("email2")).sendKeys(emailDataKontact.getEmail2());
+      wd.findElement(By.name("email3")).click();
+      wd.findElement(By.name("email3")).clear();
+      wd.findElement(By.name("email3")).sendKeys(emailDataKontact.getEmail3());
+  }
+
+  protected void fillKontactMobile(String mobile) {
+      wd.findElement(By.name("mobile")).click();
+      wd.findElement(By.name("mobile")).clear();
+      wd.findElement(By.name("mobile")).sendKeys(mobile);
+  }
+
+  protected void fillKontactAddress(String address) {
+      wd.findElement(By.name("address")).click();
+      wd.findElement(By.name("address")).clear();
+      wd.findElement(By.name("address")).sendKeys(address);
+  }
+
+  protected void fillKontactCompany(String company) {
+      wd.findElement(By.name("company")).click();
+      wd.findElement(By.name("company")).clear();
+      wd.findElement(By.name("company")).sendKeys(company);
+  }
+
+  protected void fillKontactTitle(String title) {
+      wd.findElement(By.name("title")).click();
+      wd.findElement(By.name("title")).clear();
+      wd.findElement(By.name("title")).sendKeys(title);
+  }
+
+  protected void fillKontactNickname(String nickname) {
+      wd.findElement(By.name("nickname")).click();
+      wd.findElement(By.name("nickname")).clear();
+      wd.findElement(By.name("nickname")).sendKeys(nickname);
+  }
+
+  protected void fillKontactFIO(PersonalDataKontact resonalDataKontact) {
+      wd.findElement(By.name("firstname")).click();
+      wd.findElement(By.name("firstname")).clear();
+      wd.findElement(By.name("firstname")).sendKeys(resonalDataKontact.getFirstname());
+      wd.findElement(By.name("middlename")).click();
+      wd.findElement(By.name("middlename")).clear();
+      wd.findElement(By.name("middlename")).sendKeys(resonalDataKontact.getMiddlename());
+      wd.findElement(By.name("lastname")).click();
+      wd.findElement(By.name("lastname")).clear();
+      wd.findElement(By.name("lastname")).sendKeys(resonalDataKontact.getLastname());
+  }
+
+  protected void gotoKontactPage() {
+      wd.findElement(By.linkText("add new")).click();
+  }
 }
 
 
