@@ -9,10 +9,8 @@ import ru.stqa.javaCursBarancev.addressbook.model.GroupData;
  */
 public class GroupHelper extends HelperBase {
 
-  private FirefoxDriver wd;
-
   public GroupHelper(FirefoxDriver wd) {
-    this.wd = wd;
+    super(wd);
   }
 
   public void initGroupCreation() {
@@ -27,20 +25,10 @@ public class GroupHelper extends HelperBase {
     clic(By.name("submit"));
   }
 
-  private void clic(By locator) {
-    wd.findElement(locator).click();
-  }
-
   public void fillGroupForm(GroupData groupData) {
     type(By.name("group_name"), groupData.getName());
     type(By.name("group_header"), groupData.getHeader());
     type(By.name("group_footer"), groupData.getFooter());
-  }
-
-  private void type(By locator, String text) {
-    clic(locator);
-    wd.findElement(locator).clear();
-    wd.findElement(locator).sendKeys(text);
   }
 
   public void deleteSelectedGroups() {
