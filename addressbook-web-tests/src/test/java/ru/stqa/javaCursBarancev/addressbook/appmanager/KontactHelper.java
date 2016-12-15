@@ -13,7 +13,8 @@ public class KontactHelper {
   private FirefoxDriver wd;
 
   public KontactHelper(FirefoxDriver wd) {
-   this.wd = wd;
+
+    this.wd = wd;
   }
 
   public void submitKontactCreation() {
