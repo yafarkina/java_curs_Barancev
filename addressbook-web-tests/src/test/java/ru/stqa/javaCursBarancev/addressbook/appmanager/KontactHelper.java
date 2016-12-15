@@ -8,13 +8,13 @@ import ru.stqa.javaCursBarancev.addressbook.model.PersonalDataKontact;
 /**
  * Created by yafar_000 on 14.12.2016.
  */
-public class KontactHelper {
+public class KontactHelper extends HelperBase{
 
   private FirefoxDriver wd;
 
   public KontactHelper(FirefoxDriver wd) {
 
-    this.wd = wd;
+    super(wd);
   }
 
   public void submitKontactCreation() {
