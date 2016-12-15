@@ -19,7 +19,7 @@ public class KontactHelper extends HelperBase {
   }
 
   public void fillKontactNotes(String notes) {
-    type(By.name("notes"), notes);
+    type(By.name("notes"), null);
   }
 
   public void fillKontactAddress2(String address) {
