@@ -10,17 +10,20 @@ public class NavigationHelper extends HelperBase{
 
  public NavigationHelper(FirefoxDriver wd) {
     super(wd);
-  }
 
-  public void gotoGroupPage() {
-    wd.findElement(By.linkText("groups")).click();
+
+ }
+ public void gotoGroupPage() {
+    clic(By.linkText("groups"));
   }
 
   public void gotoHomePage() {
-    wd.findElement(By.linkText("home")).click();
+
+  clic(By.linkText("home"));
   }
 
   public void gotoKontactPage() {
-    wd.findElement(By.linkText("add new")).click();
+
+  clic(By.linkText("add new"));
   }
 }
