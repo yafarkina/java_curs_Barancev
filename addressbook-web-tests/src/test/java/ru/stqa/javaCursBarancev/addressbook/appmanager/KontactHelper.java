@@ -1,7 +1,7 @@
 package ru.stqa.javaCursBarancev.addressbook.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebDriver;
 import ru.stqa.javaCursBarancev.addressbook.model.EmailDataKontact;
 import ru.stqa.javaCursBarancev.addressbook.model.PersonalDataKontact;
 
@@ -10,7 +10,7 @@ import ru.stqa.javaCursBarancev.addressbook.model.PersonalDataKontact;
  */
 public class KontactHelper extends HelperBase {
 
-  public KontactHelper(FirefoxDriver wd) {
+  public KontactHelper(WebDriver wd) {
     super(wd);
   }
 
