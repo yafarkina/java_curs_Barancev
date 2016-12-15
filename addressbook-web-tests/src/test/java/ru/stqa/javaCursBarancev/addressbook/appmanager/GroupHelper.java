@@ -7,7 +7,7 @@ import ru.stqa.javaCursBarancev.addressbook.model.GroupData;
 /**
  * Created by yafar_000 on 14.12.2016.
  */
-public class GroupHelper {
+public class GroupHelper extends HelperBase {
 
   private FirefoxDriver wd;
 
