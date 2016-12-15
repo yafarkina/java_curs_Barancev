@@ -25,12 +25,15 @@ public class HelperBase {
   }
 
   protected void click(By locator) {
+
     wd.findElement(locator).click();
   }
 
   protected void type(By locator, String text) {
     click(locator);
-    wd.findElement(locator).clear();
-    wd.findElement(locator).sendKeys(text);
+    if (text != null) {
+      wd.findElement(locator).clear();
+      wd.findElement(locator).sendKeys(text);
+    }
   }
 }
