@@ -11,7 +11,6 @@ import ru.stqa.javaCursBarancev.addressbook.model.PersonalDataKontact;
 public class KontactHelper extends HelperBase{
 
    public KontactHelper(FirefoxDriver wd) {
-
     super(wd);
   }
 
@@ -20,10 +19,8 @@ public class KontactHelper extends HelperBase{
   }
 
   public void fillKontactNotes(String notes) {
-    wd.findElement(By.name("notes")).click();
-    wd.findElement(By.name("notes")).clear();
-    wd.findElement(By.name("notes")).sendKeys(notes);
-  }
+     type(By.name("notes"), notes);
+   }
 
   public void fillKontactAddress2(String address) {
    wd.findElement(By.name("address2")).click();
