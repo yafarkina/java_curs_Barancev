@@ -57,4 +57,19 @@ public class KontactHelper extends HelperBase {
     type(By.name("middlename"), resonalDataKontact.getMiddlename());
     type(By.name("lastname"), resonalDataKontact.getLastname());
   }
+  public void selectKontact () {
+    click(By.name("selected[]"));
+  }
+
+ public void initKontactModification() {
+    click(By.xpath("//table[@id='maintable']/tbody/tr[4]/td[8]/a/img"));
+ }
+
+  public void deleteSelectedKontact() {
+    click(By.xpath("//div[@id='content']/form[2]/input[2]"));
+  }
+
+  public void updateSelectedKontact() {
+    click(By.xpath("//div[@id='content']/form[1]/input[22]"));
+  }
 }
