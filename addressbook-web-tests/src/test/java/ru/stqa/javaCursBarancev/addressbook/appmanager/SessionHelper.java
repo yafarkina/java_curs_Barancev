@@ -10,7 +10,7 @@ public class SessionHelper extends HelperBase {
   private FirefoxDriver wd;
 
   public SessionHelper(FirefoxDriver wd) {
-    this.wd = wd;
+    super(wd);
   }
   public void login(String username, String password) {
     wd.findElement(By.name("user")).click();
