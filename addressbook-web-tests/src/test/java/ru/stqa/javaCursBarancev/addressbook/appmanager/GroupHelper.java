@@ -22,6 +22,7 @@ public class GroupHelper extends HelperBase {
   }
 
   public void submitGroupCreation() {
+
     clic(By.name("submit"));
   }
 
