@@ -3,7 +3,10 @@ package ru.stqa.javaCursBarancev.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import ru.stqa.javaCursBarancev.addressbook.model.EmailDataKontact;
+import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 import ru.stqa.javaCursBarancev.addressbook.model.PersonalDataKontact;
+
+import static ru.stqa.javaCursBarancev.addressbook.model.KontactData.*;
 
 /**
  * Created by yafar_000 on 14.12.2016.
@@ -18,12 +21,16 @@ public class KontactHelper extends HelperBase {
     wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
   }
 
-  public void fillKontactNotes(String notes) {
-    type(By.name("notes"), null);
-  }
 
-  public void fillKontactAddress2(String address) {
-    type(By.name("address2"), address);
+  public void fillKontactForm(KontactData kontactData) {
+    // type(By.name("group"), KontactData.getNickname());
+    type(By.name("nickname"), kontactData.getNickname());
+    type(By.name("title"), kontactData.getTitle());
+    type(By.name("company"), kontactData.getCompany());
+    type(By.name("address"), kontactData.getAddress());
+    type(By.name("mobile"), kontactData.getMobile());
+    type(By.name("address2"), kontactData.getAddress2());
+    type(By.name("notes"), kontactData.getNotes());
   }
 
   public void fillKontactEmail(EmailDataKontact emailDataKontact) {
@@ -32,39 +39,19 @@ public class KontactHelper extends HelperBase {
     type(By.name("email3"), emailDataKontact.getEmail3());
   }
 
-  public void fillKontactMobile(String mobile) {
-    type(By.name("mobile"), mobile);
-  }
-
-  public void fillKontactAddress(String address) {
-    type(By.name("address"), address);
-  }
-
-  public void fillKontactCompany(String company) {
-    type(By.name("company"), company);
-  }
-
-  public void fillKontactTitle(String title) {
-    type(By.name("title"), title);
-  }
-
-  public void fillKontactNickname(String nickname) {
-    type(By.name("nickname"), nickname);
-  }
-
   public void fillKontactFIO(PersonalDataKontact resonalDataKontact) {
     type(By.name("firstname"), resonalDataKontact.getFirstname());
     type(By.name("middlename"), resonalDataKontact.getMiddlename());
     type(By.name("lastname"), resonalDataKontact.getLastname());
   }
-  public void selectKontact () {
 
+  public void selectKontact() {
     click(By.name("selected[]"));
   }
 
- public void initKontactModification() {
+  public void initKontactModification() {
     click(By.xpath("//table[@id='maintable']/tbody/tr[4]/td[8]/a/img"));
- }
+  }
 
   public void deleteSelectedKontact() {
     click(By.xpath("//div[@id='content']/form[2]/input[2]"));

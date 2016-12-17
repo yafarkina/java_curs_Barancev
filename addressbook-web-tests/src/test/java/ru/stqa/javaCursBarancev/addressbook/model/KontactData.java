@@ -5,29 +5,29 @@ package ru.stqa.javaCursBarancev.addressbook.model;
  */
 public class KontactData {
 
-  private String group;
-  private String address;
-  private String nickname;
-  private String title;
-  private String company;
-  private String mobile;
-  private String address2;
-  private String notes;
+ // private final String group;
+  private final String nickname;
+  private final String title;
+  private final String company;
+  private final String address;
+  private final String mobile;
+  private final String address2;
+  private final String notes;
 
-  public KontactData(String group, String address, String nickname, String title, String company, String mobile, String address2, String notes) {
-    this.group = group;
-    this.address = address;
+  public KontactData(String nickname, String title, String company, String address, String mobile, String address2, String notes) {
+    //this.group = group;
     this.nickname = nickname;
     this.title = title;
     this.company = company;
+    this.address = address;
     this.mobile = mobile;
     this.address2 = address2;
     this.notes = notes;
   }
 
-  public String getGroup() {
-    return group;
-  }
+  //public String getGroup() {
+   // return group;
+  //}
 
   public String getAddress() {
     return address;
