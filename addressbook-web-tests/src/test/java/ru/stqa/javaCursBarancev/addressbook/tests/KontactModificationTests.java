@@ -1,6 +1,7 @@
 package ru.stqa.javaCursBarancev.addressbook.tests;
 
 import org.testng.annotations.Test;
+import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 import ru.stqa.javaCursBarancev.addressbook.model.PersonalDataKontact;
 
 /**
@@ -15,9 +16,7 @@ public class KontactModificationTests extends TestBase {
     app.getKontactHelper().selectKontact();
     app.getKontactHelper().initKontactModification();
     app.getKontactHelper().fillKontactFIO(new PersonalDataKontact("name1", "middlename1", "lastname1"));
-    app.getKontactHelper().fillKontactNotes("proba pera");
-    app.getKontactHelper().fillKontactCompany("company company");
-    app.getKontactHelper().fillKontactMobile("+71111111111");
+    app.getKontactHelper().fillKontactForm (new KontactData("nickname", "title", "company", "address", "+79999999999", "address2", "notes"));
     app.getKontactHelper().updateSelectedKontact();
     app.getNavigationHelper().gotoHomePage();
   }
