@@ -5,4 +5,13 @@ package ru.stqa.javaCursBarancev.addressbook.model;
  */
 public class KontactData {
 
+  public String group;
+
+  public KontactData (String group) {
+    this.group = group;
+  }
+
+  public String getGroup() {
+    return group;
+  }
 }

@@ -58,6 +58,7 @@ public class KontactHelper extends HelperBase {
     type(By.name("lastname"), resonalDataKontact.getLastname());
   }
   public void selectKontact () {
+
     click(By.name("selected[]"));
   }
 
