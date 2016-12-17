@@ -16,7 +16,17 @@ public class KontactModificationTests extends TestBase {
     app.getKontactHelper().selectKontact();
     app.getKontactHelper().initKontactModification();
     app.getKontactHelper().fillKontactFIO(new PersonalDataKontact("name1", "middlename1", "lastname1"));
-    app.getKontactHelper().fillKontactForm (new KontactData("nickname", "title", "company", "address", "+79999999999", "address2", "notes"));
+    app.getKontactHelper().fillKontactForm(new KontactData(
+            "nickname",
+            "title",
+            "company",
+            "address",
+            "+79999999999",
+            "email",
+            "email2",
+            "email3",
+            "address2",
+            "notes"));
     app.getKontactHelper().updateSelectedKontact();
     app.getNavigationHelper().gotoHomePage();
   }
