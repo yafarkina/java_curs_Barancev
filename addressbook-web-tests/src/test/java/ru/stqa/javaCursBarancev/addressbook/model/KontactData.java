@@ -4,7 +4,9 @@ package ru.stqa.javaCursBarancev.addressbook.model;
  * Created by yafar_000 on 17.12.2016.
  */
 public class KontactData {
-
+  private final String firstname;
+  private final String middlename;
+  private final String lastname;
  // private final String group;
   private final String nickname;
   private final String title;
@@ -17,7 +19,10 @@ public class KontactData {
   private final String address2;
   private final String notes;
 
-  public KontactData(String nickname, String title, String company, String address, String mobile, String email, String email2, String email3, String address2, String notes) {
+  public KontactData(String firstname, String middlename, String lastname, String nickname, String title, String company, String address, String mobile, String email, String email2, String email3, String address2, String notes) {
+    this.firstname = firstname;
+    this.middlename = middlename;
+    this.lastname = lastname;
     //this.group = group;
     this.nickname = nickname;
     this.title = title;
@@ -73,5 +78,17 @@ public class KontactData {
 
   public String getEmail3() {
     return email3;
+  }
+
+  public String getFirstname() {
+    return firstname;
+  }
+
+  public String getMiddlename() {
+    return middlename;
+  }
+
+  public String getLastname() {
+    return lastname;
   }
 }

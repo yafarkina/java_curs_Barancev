@@ -3,7 +3,6 @@ package ru.stqa.javaCursBarancev.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
-import ru.stqa.javaCursBarancev.addressbook.model.PersonalDataKontact;
 
 /**
  * Created by yafar_000 on 14.12.2016.
@@ -18,9 +17,10 @@ public class KontactHelper extends HelperBase {
     wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
   }
 
-
   public void fillKontactForm(KontactData kontactData) {
-    // type(By.name("group"), KontactData.getNickname());
+    type(By.name("firstname"), kontactData.getFirstname());
+    type(By.name("middlename"), kontactData.getMiddlename());
+    type(By.name("lastname"), kontactData.getLastname());
     type(By.name("nickname"), kontactData.getNickname());
     type(By.name("title"), kontactData.getTitle());
     type(By.name("company"), kontactData.getCompany());
@@ -29,17 +29,12 @@ public class KontactHelper extends HelperBase {
     type(By.name("email2"), kontactData.getEmail2());
     type(By.name("email3"), kontactData.getEmail3());
     type(By.name("mobile"), kontactData.getMobile());
+    // type(By.name("group"), KontactData.getNickname());
     type(By.name("address2"), kontactData.getAddress2());
     type(By.name("notes"), kontactData.getNotes());
   }
 
-   public void fillKontactFIO(PersonalDataKontact resonalDataKontact) {
-    type(By.name("firstname"), resonalDataKontact.getFirstname());
-    type(By.name("middlename"), resonalDataKontact.getMiddlename());
-    type(By.name("lastname"), resonalDataKontact.getLastname());
-  }
-
-  public void selectKontact() {
+   public void selectKontact() {
     click(By.name("selected[]"));
   }
 
