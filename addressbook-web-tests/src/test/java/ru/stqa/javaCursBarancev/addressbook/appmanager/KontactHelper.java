@@ -29,7 +29,7 @@ public class KontactHelper extends HelperBase {
     type(By.name("email2"), kontactData.getEmail2());
     type(By.name("email3"), kontactData.getEmail3());
     type(By.name("mobile"), kontactData.getMobile());
-    // type(By.name("group"), KontactData.getNickname());
+   // type(By.name("group"), KontactData.getNickname());
     type(By.name("address2"), kontactData.getAddress2());
     type(By.name("notes"), kontactData.getNotes());
   }

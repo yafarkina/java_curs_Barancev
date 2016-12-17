@@ -7,7 +7,6 @@ public class KontactData {
   private final String firstname;
   private final String middlename;
   private final String lastname;
- // private final String group;
   private final String nickname;
   private final String title;
   private final String company;
@@ -16,14 +15,27 @@ public class KontactData {
   private final String email;
   private final String email2;
   private final String email3;
+  private final String group;
   private final String address2;
   private final String notes;
 
-  public KontactData(String firstname, String middlename, String lastname, String nickname, String title, String company, String address, String mobile, String email, String email2, String email3, String address2, String notes) {
+  public KontactData(String firstname,
+                     String middlename,
+                     String lastname,
+                     String nickname,
+                     String title,
+                     String company,
+                     String address,
+                     String mobile,
+                     String email,
+                     String email2,
+                     String email3,
+                     String group,
+                     String address2,
+                     String notes) {
     this.firstname = firstname;
     this.middlename = middlename;
     this.lastname = lastname;
-    //this.group = group;
     this.nickname = nickname;
     this.title = title;
     this.company = company;
@@ -32,13 +44,14 @@ public class KontactData {
     this.email = email;
     this.email2 = email2;
     this.email3 = email3;
+    this.group = group;
     this.address2 = address2;
     this.notes = notes;
   }
 
-  //public String getGroup() {
-   // return group;
-  //}
+  public String getGroup() {
+   return group;
+  }
 
   public String getAddress() {
     return address;
