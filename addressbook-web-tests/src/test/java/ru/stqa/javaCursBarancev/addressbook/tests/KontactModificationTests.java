@@ -22,9 +22,9 @@ public class KontactModificationTests extends TestBase {
             "company",
             "address",
             "+79999999999",
-            "email",
-            "email2",
-            "email3",
+            "email@mail.mail",
+            "email2@mail.mail",
+            "email3@mail.mail",
             "address2",
             "notes"));
     app.getKontactHelper().updateSelectedKontact();

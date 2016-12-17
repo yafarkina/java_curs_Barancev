@@ -2,11 +2,8 @@ package ru.stqa.javaCursBarancev.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import ru.stqa.javaCursBarancev.addressbook.model.EmailDataKontact;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 import ru.stqa.javaCursBarancev.addressbook.model.PersonalDataKontact;
-
-import static ru.stqa.javaCursBarancev.addressbook.model.KontactData.*;
 
 /**
  * Created by yafar_000 on 14.12.2016.
@@ -28,18 +25,15 @@ public class KontactHelper extends HelperBase {
     type(By.name("title"), kontactData.getTitle());
     type(By.name("company"), kontactData.getCompany());
     type(By.name("address"), kontactData.getAddress());
+    type(By.name("email"), kontactData.getEmail());
+    type(By.name("email2"), kontactData.getEmail2());
+    type(By.name("email3"), kontactData.getEmail3());
     type(By.name("mobile"), kontactData.getMobile());
     type(By.name("address2"), kontactData.getAddress2());
     type(By.name("notes"), kontactData.getNotes());
   }
 
-  public void fillKontactEmail(EmailDataKontact emailDataKontact) {
-    type(By.name("email"), emailDataKontact.getEmail());
-    type(By.name("email2"), emailDataKontact.getEmail2());
-    type(By.name("email3"), emailDataKontact.getEmail3());
-  }
-
-  public void fillKontactFIO(PersonalDataKontact resonalDataKontact) {
+   public void fillKontactFIO(PersonalDataKontact resonalDataKontact) {
     type(By.name("firstname"), resonalDataKontact.getFirstname());
     type(By.name("middlename"), resonalDataKontact.getMiddlename());
     type(By.name("lastname"), resonalDataKontact.getLastname());

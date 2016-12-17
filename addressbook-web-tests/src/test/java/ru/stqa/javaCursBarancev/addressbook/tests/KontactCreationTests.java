@@ -1,7 +1,6 @@
 package ru.stqa.javaCursBarancev.addressbook.tests;
 
 import org.testng.annotations.Test;
-import ru.stqa.javaCursBarancev.addressbook.model.EmailDataKontact;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 import ru.stqa.javaCursBarancev.addressbook.model.PersonalDataKontact;
 
@@ -17,9 +16,9 @@ public class KontactCreationTests extends TestBase {
             "company",
             "address",
             "+79999999999",
-            "email",
-            "email2",
-            "email3",
+            "email@mail.mail",
+            "email2@mail.mail",
+            "email3@mail.mail",
             "address2",
             null));
    // app.getKontactHelper().fillKontactEmail(new EmailDataKontact("test1@test1.test1", "test2@test2.test2", "test3@.test3.test3"));
