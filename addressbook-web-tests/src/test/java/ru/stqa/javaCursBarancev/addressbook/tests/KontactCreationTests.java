@@ -20,6 +20,7 @@ public class KontactCreationTests extends TestBase {
             "email@mail.mail",
             "email2@mail.mail",
             "email3@mail.mail",
+            "test1",
             "address2",
             null));
     app.getKontactHelper().submitKontactCreation();

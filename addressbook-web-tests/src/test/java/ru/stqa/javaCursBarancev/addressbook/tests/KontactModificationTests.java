@@ -26,6 +26,7 @@ public class KontactModificationTests extends TestBase {
             "email@mail.mail",
             "email2@mail.mail",
             "email3@mail.mail",
+            null,
             "address2",
             "notes"));
     app.getKontactHelper().updateSelectedKontact();
