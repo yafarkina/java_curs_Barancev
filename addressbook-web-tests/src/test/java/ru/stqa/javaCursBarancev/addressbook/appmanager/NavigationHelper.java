@@ -6,21 +6,34 @@ import org.openqa.selenium.WebDriver;
 /**
  * Created by yafar_000 on 14.12.2016.
  */
-public class NavigationHelper extends HelperBase{
+public class NavigationHelper extends HelperBase {
 
- public NavigationHelper(WebDriver wd) {
+  public NavigationHelper(WebDriver wd) {
     super(wd);
- }
+  }
 
- public void gotoGroupPage() {
+  public void gotoGroupPage() {
+    if (isElementPresent(By.tagName("h1"))
+            && wd.findElement(By.tagName("h1")).getText().equals("Group")
+            && isElementPresent(By.name("new"))) {
+      return;
+    }
     click(By.linkText("groups"));
   }
 
   public void gotoHomePage() {
-  click(By.linkText("home"));
+    if (isElementPresent(By.id("maintable"))) {
+      return;
+    }
+    click(By.linkText("home"));
   }
 
   public void gotoKontactPage() {
-  click(By.linkText("add new"));
+    if (isElementPresent(By.tagName("h1"))
+            && wd.findElement(By.tagName("h1")).getText().equals("Edit / add address book entry")
+            && isElementPresent(By.name("submit"))) {
+      return;
+    }
+      click(By.linkText("add new"));
+    }
   }
-}
