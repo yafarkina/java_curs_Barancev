@@ -17,16 +17,17 @@ public class TestBase {
     app = new ApplicationManadger(BrowserType.FIREFOX);
   }
 
-  @AfterMethod
-
-  public void tearDown() {
-    app.stop();
-  }
-
   @BeforeMethod
   public void setUp() throws Exception {
     app.init();
   }
+
+  @AfterMethod
+  public void tearDown() {
+    app.stop();
+  }
+
+
 
 }
 

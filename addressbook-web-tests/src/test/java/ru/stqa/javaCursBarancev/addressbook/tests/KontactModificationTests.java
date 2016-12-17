@@ -12,6 +12,24 @@ public class KontactModificationTests extends TestBase {
 
   public void testKontactModification() {
     app.getNavigationHelper().gotoHomePage();
+    if (!app.getKontactHelper().isThereAKontact()) {
+      app.getNavigationHelper().gotoKontactPage();
+      app.getKontactHelper().createKontact(new KontactData(
+              "first_name",
+              "middlename",
+              "last_name",
+              "nickname",
+              "title",
+              "company",
+              "address",
+              "+79999999999",
+              "email@mail.mail",
+              "email2@mail.mail",
+              "email3@mail.mail",
+              "test1",
+              "address2",
+              null),true);
+    }
     app.getKontactHelper().selectKontact();
     app.getKontactHelper().initKontactModification();
     app.getKontactHelper().fillKontactForm(new KontactData(

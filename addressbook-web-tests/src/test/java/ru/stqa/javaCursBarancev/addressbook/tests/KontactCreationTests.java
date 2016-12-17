@@ -8,7 +8,7 @@ public class KontactCreationTests extends TestBase {
   @Test
   public void testKontactCreation() {
     app.getNavigationHelper().gotoKontactPage();
-    app.getKontactHelper().fillKontactForm(new KontactData(
+    app.getKontactHelper().createKontact(new KontactData(
             "first_name",
             "middlename",
             "last_name",
@@ -23,7 +23,7 @@ public class KontactCreationTests extends TestBase {
             "test1",
             "address2",
             null),true);
-    app.getKontactHelper().submitKontactCreation();
-    app.getNavigationHelper().gotoHomePage();
+
+      app.getNavigationHelper().gotoHomePage();
   }
 }

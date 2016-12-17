@@ -48,7 +48,7 @@ public class KontactHelper extends HelperBase {
   }
 
   public void initKontactModification() {
-    click(By.xpath("//table[@id='maintable']/tbody/tr[4]/td[8]/a/img"));
+    click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
   }
 
   public void deleteSelectedKontact() {
@@ -57,5 +57,14 @@ public class KontactHelper extends HelperBase {
 
   public void updateSelectedKontact() {
     click(By.xpath("//div[@id='content']/form[1]/input[22]"));
+  }
+
+  public void createKontact(KontactData kontact, boolean creation) {
+   fillKontactForm(kontact,creation);
+    submitKontactCreation();
+  }
+
+  public boolean isThereAKontact() {
+    return isElementPresent(By.name("selected[]"));
   }
 }
