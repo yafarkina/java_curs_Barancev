@@ -9,9 +9,9 @@ public class KontactCreationTests extends TestBase {
   public void testKontactCreation() {
     app.getNavigationHelper().gotoKontactPage();
     app.getKontactHelper().fillKontactForm(new KontactData(
-            "firstname",
+            "first_name",
             "middlename",
-            "lastname",
+            "last_name",
             "nickname",
             "title",
             "company",
@@ -22,7 +22,7 @@ public class KontactCreationTests extends TestBase {
             "email3@mail.mail",
             "test1",
             "address2",
-            null));
+            null),true);
     app.getKontactHelper().submitKontactCreation();
     app.getNavigationHelper().gotoHomePage();
   }

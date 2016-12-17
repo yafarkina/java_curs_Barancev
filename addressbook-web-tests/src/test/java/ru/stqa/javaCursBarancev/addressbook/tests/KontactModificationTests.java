@@ -28,7 +28,7 @@ public class KontactModificationTests extends TestBase {
             "email3@mail.mail",
             null,
             "address2",
-            "notes"));
+            "notes"), false);
     app.getKontactHelper().updateSelectedKontact();
     app.getNavigationHelper().gotoHomePage();
   }
