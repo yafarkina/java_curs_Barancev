@@ -40,11 +40,10 @@ public class KontactHelper extends HelperBase {
     } else {
       Assert.assertFalse(isElementPresent(By.name("new_group")));
     }
-
   }
 
-  public void selectKontact() {
-    click(By.name("selected[]"));
+  public void selectKontact(int index) {
+    wd.findElements(By.name("selected[]")).get(index).click();
   }
 
   public void initKontactModification() {

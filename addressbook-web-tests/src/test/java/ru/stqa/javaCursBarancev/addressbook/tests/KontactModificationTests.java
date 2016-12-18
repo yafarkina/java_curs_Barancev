@@ -32,7 +32,7 @@ public class KontactModificationTests extends TestBase {
               null),true);
     }
     int befor = app.getKontactHelper().getKontactCount();
-    app.getKontactHelper().selectKontact();
+    app.getKontactHelper().selectKontact(befor-1);
     app.getKontactHelper().initKontactModification();
     app.getKontactHelper().fillKontactForm(new KontactData(
             "firstname2",
