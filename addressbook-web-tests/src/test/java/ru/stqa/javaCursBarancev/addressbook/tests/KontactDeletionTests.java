@@ -1,5 +1,6 @@
 package ru.stqa.javaCursBarancev.addressbook.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 
@@ -30,10 +31,13 @@ public class KontactDeletionTests extends TestBase {
               "address2",
               null),true);
     }
+    int befor = app.getKontactHelper().getKontactCount();
     app.getKontactHelper().selectKontact();
     app.getKontactHelper().initKontactModification();
     app.getKontactHelper().deleteSelectedKontact();
     app.getNavigationHelper().gotoHomePage();
+    int after = app.getKontactHelper().getKontactCount();
+    Assert.assertEquals(after, befor - 1);
   }
 
 }

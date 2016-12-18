@@ -67,4 +67,8 @@ public class KontactHelper extends HelperBase {
   public boolean isThereAKontact() {
     return isElementPresent(By.name("selected[]"));
   }
+
+  public int getKontactCount() {
+    return wd.findElements(By.name("selected[]")).size();
+  }
 }
