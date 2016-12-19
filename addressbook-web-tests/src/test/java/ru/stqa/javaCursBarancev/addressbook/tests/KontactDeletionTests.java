@@ -42,6 +42,9 @@ public class KontactDeletionTests extends TestBase {
     List<KontactData> after = app.getKontactHelper().getKontactList();
     //int after = app.getKontactHelper().getKontactCount();
     Assert.assertEquals(after.size(), befor.size() - 1);
+
+    befor.remove(0);
+    Assert.assertEquals(after, befor);
   }
 
 }
