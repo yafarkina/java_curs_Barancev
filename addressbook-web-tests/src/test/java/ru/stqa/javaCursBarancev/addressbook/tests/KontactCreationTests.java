@@ -4,12 +4,15 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 
+import java.util.List;
+
 public class KontactCreationTests extends TestBase {
 
   @Test
   public void testKontactCreation() {
     app.getNavigationHelper().gotoHomePage();
-    int befor = app.getKontactHelper().getKontactCount();
+    List<KontactData> befor = app.getKontactHelper().getKontactList();
+   // int befor = app.getKontactHelper().getKontactCount();
     app.getNavigationHelper().gotoKontactPage();
     app.getKontactHelper().createKontact(new KontactData(
             "first_name",
@@ -28,7 +31,8 @@ public class KontactCreationTests extends TestBase {
             null),true);
 
      app.getNavigationHelper().gotoHomePage();
-    int after = app.getKontactHelper().getKontactCount();
-    Assert.assertEquals(after, befor + 1);
+    List<KontactData> after = app.getKontactHelper().getKontactList();
+    //int after = app.getKontactHelper().getKontactCount();
+    Assert.assertEquals(after.size(), befor.size() + 1);
   }
 }

@@ -3,9 +3,13 @@ package ru.stqa.javaCursBarancev.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by yafar_000 on 14.12.2016.
@@ -60,7 +64,7 @@ public class KontactHelper extends HelperBase {
 
   public void createKontact(KontactData kontact, boolean creation) {
    fillKontactForm(kontact,creation);
-    submitKontactCreation();
+   submitKontactCreation();
   }
 
   public boolean isThereAKontact() {
@@ -69,5 +73,43 @@ public class KontactHelper extends HelperBase {
 
   public int getKontactCount() {
     return wd.findElements(By.name("selected[]")).size();
+  }
+
+  public List<KontactData> getKontactList() {
+    List<KontactData> kontacts = new ArrayList<KontactData>();
+    List<WebElement> elements = wd.findElements(By.cssSelector("tr[name='entry']"));
+    for (WebElement element: elements){
+      String firstname = element.getText();
+      String middlename = element.getText();
+      String lastname = element.getText();
+      String nickname = element.getText();
+      String title = element.getText();
+      String company = element.getText();
+      String address = element.getText();
+      String email = element.getText();
+      String email2 = element.getText();
+      String email3 = element.getText();
+      String mobile = element.getText();
+      String group = element.getText();
+      String address2 = element.getText();
+      String notes = element.getText();
+      KontactData kontact = new KontactData(
+              firstname,
+              middlename,
+              lastname,
+              nickname,
+              title,
+              company,
+              address,
+              email,
+              email2,
+              email3,
+              mobile,
+              group,
+              address2,
+              notes);
+      kontacts.add(kontact);
+    }
+    return kontacts;
   }
 }
