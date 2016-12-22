@@ -4,70 +4,13 @@ package ru.stqa.javaCursBarancev.addressbook.model;
  * Created by yafar_000 on 17.12.2016.
  */
 public class KontactData {
+  private final String id;
   private final String firstname;
   private final String middlename;
   private final String lastname;
   private final String nickname;
   private final String title;
   private final String company;
-  private final String address;
-  private final String mobile;
-  private final String email;
-  private final String email2;
-  private final String email3;
-  private final String group;
-  private final String address2;
-  private final String notes;
-
-  public KontactData(String firstname,
-                     String middlename,
-                     String lastname,
-                     String nickname,
-                     String title,
-                     String company,
-                     String address,
-                     String mobile,
-                     String email,
-                     String email2,
-                     String email3,
-                     String group,
-                     String address2,
-                     String notes) {
-    this.firstname = firstname;
-    this.middlename = middlename;
-    this.lastname = lastname;
-    this.nickname = nickname;
-    this.title = title;
-    this.company = company;
-    this.address = address;
-    this.mobile = mobile;
-    this.email = email;
-    this.email2 = email2;
-    this.email3 = email3;
-    this.group = group;
-    this.address2 = address2;
-    this.notes = notes;
-  }
-
-  @Override
-  public String toString() {
-    return "KontactData{" +
-            "firstname='" + firstname + '\'' +
-            ", middlename='" + middlename + '\'' +
-            ", lastname='" + lastname + '\'' +
-            ", nickname='" + nickname + '\'' +
-            ", title='" + title + '\'' +
-            ", company='" + company + '\'' +
-            ", address='" + address + '\'' +
-            ", mobile='" + mobile + '\'' +
-            ", email='" + email + '\'' +
-            ", email2='" + email2 + '\'' +
-            ", email3='" + email3 + '\'' +
-            ", group='" + group + '\'' +
-            ", address2='" + address2 + '\'' +
-            ", notes='" + notes + '\'' +
-            '}';
-  }
 
   @Override
   public boolean equals(Object o) {
@@ -76,6 +19,7 @@ public class KontactData {
 
     KontactData that = (KontactData) o;
 
+    if (id != null ? !id.equals(that.id) : that.id != null) return false;
     if (firstname != null ? !firstname.equals(that.firstname) : that.firstname != null) return false;
     if (middlename != null ? !middlename.equals(that.middlename) : that.middlename != null) return false;
     if (lastname != null ? !lastname.equals(that.lastname) : that.lastname != null) return false;
@@ -94,7 +38,8 @@ public class KontactData {
 
   @Override
   public int hashCode() {
-    int result = firstname != null ? firstname.hashCode() : 0;
+    int result = id != null ? id.hashCode() : 0;
+    result = 31 * result + (firstname != null ? firstname.hashCode() : 0);
     result = 31 * result + (middlename != null ? middlename.hashCode() : 0);
     result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
     result = 31 * result + (nickname != null ? nickname.hashCode() : 0);
@@ -109,6 +54,105 @@ public class KontactData {
     result = 31 * result + (address2 != null ? address2.hashCode() : 0);
     result = 31 * result + (notes != null ? notes.hashCode() : 0);
     return result;
+  }
+
+  @Override
+  public String toString() {
+    return "KontactData{" +
+            "id='" + id + '\'' +
+            ", firstname='" + firstname + '\'' +
+            ", middlename='" + middlename + '\'' +
+            ", lastname='" + lastname + '\'' +
+            ", nickname='" + nickname + '\'' +
+            ", title='" + title + '\'' +
+            ", company='" + company + '\'' +
+            ", address='" + address + '\'' +
+            ", mobile='" + mobile + '\'' +
+            ", email='" + email + '\'' +
+            ", email2='" + email2 + '\'' +
+            ", email3='" + email3 + '\'' +
+            ", group='" + group + '\'' +
+            ", address2='" + address2 + '\'' +
+            ", notes='" + notes + '\'' +
+            '}';
+  }
+
+  private final String address;
+  private final String mobile;
+  private final String email;
+  private final String email2;
+  private final String email3;
+  private final String group;
+  private final String address2;
+  private final String notes;
+
+
+  public KontactData(String id,
+                     String firstname,
+                     String middlename,
+                     String lastname,
+                     String nickname,
+                     String title,
+                     String company,
+                     String address,
+                     String mobile,
+                     String email,
+                     String email2,
+                     String email3,
+                     String group,
+                     String address2,
+                     String notes) {
+    this.id = id;
+    this.firstname = firstname;
+    this.middlename = middlename;
+    this.lastname = lastname;
+    this.nickname = nickname;
+
+    this.title = title;
+    this.company = company;
+    this.address = address;
+    this.mobile = mobile;
+    this.email = email;
+    this.email2 = email2;
+    this.email3 = email3;
+    this.group = group;
+    this.address2 = address2;
+    this.notes = notes;
+  }
+
+  public KontactData(String firstname,
+                     String middlename,
+                     String lastname,
+                     String nickname,
+                     String title,
+                     String company,
+                     String address,
+                     String mobile,
+                     String email,
+                     String email2,
+                     String email3,
+                     String group,
+                     String address2,
+                     String notes) {
+    this.id = null;
+    this.firstname = firstname;
+    this.middlename = middlename;
+    this.lastname = lastname;
+    this.nickname = nickname;
+    this.title = title;
+    this.company = company;
+    this.address = address;
+    this.mobile = mobile;
+    this.email = email;
+    this.email2 = email2;
+    this.email3 = email3;
+    this.group = group;
+    this.address2 = address2;
+    this.notes = notes;
+  }
+
+  public String getId() {
+    return id;
   }
 
   public String getGroup() {

@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 
+import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -37,7 +38,8 @@ public class KontactModificationTests extends TestBase {
     //int befor = app.getKontactHelper().getKontactCount();
     app.getKontactHelper().selectKontact(befor.size()-1);
     app.getKontactHelper().initKontactModification();
-    app.getKontactHelper().fillKontactForm(new KontactData(
+    KontactData kontact = new KontactData(
+             befor.get(befor.size() - 1).getId(),
             "firstname2",
             "middlename",
             "lastname",
@@ -51,11 +53,16 @@ public class KontactModificationTests extends TestBase {
             "email3@mail.mail",
             null,
             "address2",
-            "notes"), false);
+            "notes");
+    app.getKontactHelper().fillKontactForm(kontact, false);
     app.getKontactHelper().updateSelectedKontact();
     app.getNavigationHelper().gotoHomePage();
     List<KontactData> after = app.getKontactHelper().getKontactList();
     //int after = app.getKontactHelper().getKontactCount();
     Assert.assertEquals(after.size(), befor.size());
+
+    befor.remove(befor.size()-1);
+    befor.add(kontact);
+    Assert.assertEquals(new HashSet<Object>(befor), new HashSet<Object>(after));
   }
 }

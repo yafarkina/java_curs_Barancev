@@ -78,7 +78,7 @@ public class KontactHelper extends HelperBase {
   public List<KontactData> getKontactList() {
     List<KontactData> kontacts = new ArrayList<KontactData>();
     List<WebElement> elements = wd.findElements(By.cssSelector("tr[name='entry']"));
-    for (WebElement element: elements){
+      for (WebElement element: elements){
       String firstname = element.getText();
       String middlename = element.getText();
       String lastname = element.getText();
@@ -93,7 +93,10 @@ public class KontactHelper extends HelperBase {
       String group = element.getText();
       String address2 = element.getText();
       String notes = element.getText();
+      String id = element.findElement(By.tagName("input")).getAttribute("value");
+
       KontactData kontact = new KontactData(
+              id,
               firstname,
               middlename,
               lastname,
