@@ -16,14 +16,14 @@ public class GroupDeletionTests extends TestBase {
     }
     List<GroupData> befor = app.getGroupHelper().getGroupList();
     //int befor = app.getGroupHelper().getGroupCount();
-    app.getGroupHelper().selectGroup(0);
+    app.getGroupHelper().selectGroup(befor.size()-1);
     app.getGroupHelper().deleteSelectedGroups();
     app.getGroupHelper().returnToGroupPage();
     List<GroupData> after = app.getGroupHelper().getGroupList();
     //int after = app.getGroupHelper().getGroupCount();
     Assert.assertEquals(after.size(), befor.size()-1);
 
-    befor.remove(0);
+    befor.remove(befor.size()-1);
     Assert.assertEquals(after, befor);
   }
 

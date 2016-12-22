@@ -35,7 +35,7 @@ public class KontactDeletionTests extends TestBase {
     }
     List<KontactData> befor = app.getKontactHelper().getKontactList();
     //int befor = app.getKontactHelper().getKontactCount();
-    app.getKontactHelper().selectKontact(0);
+    app.getKontactHelper().selectKontact(befor.size() - 1);
     app.getKontactHelper().initKontactModification();
     app.getKontactHelper().deleteSelectedKontact();
     app.getNavigationHelper().gotoHomePage();
@@ -43,7 +43,7 @@ public class KontactDeletionTests extends TestBase {
     //int after = app.getKontactHelper().getKontactCount();
     Assert.assertEquals(after.size(), befor.size() - 1);
 
-    befor.remove(0);
+    befor.remove(befor.size() - 1);
     Assert.assertEquals(after, befor);
   }
 

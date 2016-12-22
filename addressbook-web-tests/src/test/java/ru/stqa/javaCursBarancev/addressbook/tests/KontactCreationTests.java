@@ -15,9 +15,9 @@ public class KontactCreationTests extends TestBase {
    // int befor = app.getKontactHelper().getKontactCount();
     app.getNavigationHelper().gotoKontactPage();
     app.getKontactHelper().createKontact(new KontactData(
-            "first_name",
+            "ivan",
             "middlename",
-            "last_name",
+            "ivan",
             "nickname",
             "title",
             "company",

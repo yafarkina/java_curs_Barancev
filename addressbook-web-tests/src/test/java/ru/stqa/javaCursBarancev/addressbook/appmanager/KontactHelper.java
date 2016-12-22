@@ -79,38 +79,33 @@ public class KontactHelper extends HelperBase {
     List<KontactData> kontacts = new ArrayList<KontactData>();
     List<WebElement> elements = wd.findElements(By.cssSelector("tr[name='entry']"));
       for (WebElement element: elements){
-      String firstname = element.getText();
-      String middlename = element.getText();
-      String lastname = element.getText();
-      String nickname = element.getText();
-      String title = element.getText();
-      String company = element.getText();
-      String address = element.getText();
-      String email = element.getText();
-      String email2 = element.getText();
-      String email3 = element.getText();
-      String mobile = element.getText();
-      String group = element.getText();
-      String address2 = element.getText();
-      String notes = element.getText();
+      List<WebElement> cells= element.findElements(By.tagName("td"));
+      String firstname = cells.get(2).getText();
+      String lastname = cells.get(1).getText();
+      String address = cells.get(3).getText();
+      String mobile = cells.get(5).getText();
+      String email = cells.get(4).getText();
+      String email2 = cells.get(4).getText();
+      String email3 = cells.get(4).getText();
+
       String id = element.findElement(By.tagName("input")).getAttribute("value");
 
       KontactData kontact = new KontactData(
               id,
               firstname,
-              middlename,
+              null,
               lastname,
-              nickname,
-              title,
-              company,
+              null,
+              null,
+              null,
               address,
               email,
               email2,
               email3,
               mobile,
-              group,
-              address2,
-              notes);
+              null,
+              null,
+              null);
       kontacts.add(kontact);
     }
     return kontacts;
