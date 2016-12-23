@@ -37,10 +37,10 @@ public class KontactModificationTests extends TestBase {
     }
     List<KontactData> befor = app.getKontactHelper().getKontactList();
     //int befor = app.getKontactHelper().getKontactCount();
-    app.getKontactHelper().selectKontact(0);
+    app.getKontactHelper().selectKontact(befor.size()-1);
     app.getKontactHelper().initKontactModification();
     KontactData kontact = new KontactData(
-             befor.get(0).getId(),
+             befor.get(befor.size()-1).getId(),
             "firstname2",
             "middlename",
             "lastname",
@@ -58,11 +58,12 @@ public class KontactModificationTests extends TestBase {
     app.getKontactHelper().fillKontactForm(kontact, false);
     app.getKontactHelper().updateSelectedKontact();
     app.getNavigationHelper().gotoHomePage();
+
     List<KontactData> after = app.getKontactHelper().getKontactList();
     //int after = app.getKontactHelper().getKontactCount();
     Assert.assertEquals(after.size(), befor.size());
 
-    befor.remove(0);
+    befor.remove(befor.size()-1);
     befor.add(kontact);
     Assert.assertEquals(new HashSet<Object>(befor), new HashSet<Object>(after));
   }
