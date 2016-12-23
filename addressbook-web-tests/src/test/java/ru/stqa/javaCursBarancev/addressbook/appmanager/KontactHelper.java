@@ -83,11 +83,6 @@ public class KontactHelper extends HelperBase {
       String firstname = cells.get(2).getText();
       String lastname = cells.get(1).getText();
       String address = cells.get(3).getText();
-      String mobile = cells.get(5).getText();
-      String email = cells.get(4).getText();
-      String email2 = cells.get(4).getText();
-      String email3 = cells.get(4).getText();
-
       String id = element.findElement(By.tagName("input")).getAttribute("value");
 
       KontactData kontact = new KontactData(
@@ -99,10 +94,10 @@ public class KontactHelper extends HelperBase {
               null,
               null,
               address,
-              email,
-              email2,
-              email3,
-              mobile,
+              null,
+              null,
+              null,
+              null,
               null,
               null,
               null);

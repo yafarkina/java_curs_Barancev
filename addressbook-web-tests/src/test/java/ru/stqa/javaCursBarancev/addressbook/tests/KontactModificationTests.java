@@ -33,6 +33,7 @@ public class KontactModificationTests extends TestBase {
               "test1",
               "address2",
               null),true);
+      app.getNavigationHelper().gotoHomePage();
     }
     List<KontactData> befor = app.getKontactHelper().getKontactList();
     //int befor = app.getKontactHelper().getKontactCount();
