@@ -16,9 +16,9 @@ public class KontactCreationTests extends TestBase {
    // int befor = app.getKontactHelper().getKontactCount();
     app.getNavigationHelper().gotoKontactPage();
     KontactData kontact = new KontactData(
-            "ivan",
+            "first_name",
             "middlename",
-            "ivan",
+            "last_name",
             "nickname",
             "title",
             "company",
@@ -31,8 +31,8 @@ public class KontactCreationTests extends TestBase {
             "address2",
             null);
     app.getKontactHelper().createKontact(kontact ,true);
+    app.getNavigationHelper().gotoHomePage();
 
-     app.getNavigationHelper().gotoHomePage();
     List<KontactData> after = app.getKontactHelper().getKontactList();
     //int after = app.getKontactHelper().getKontactCount();
     Assert.assertEquals(after.size(), befor.size() + 1);
