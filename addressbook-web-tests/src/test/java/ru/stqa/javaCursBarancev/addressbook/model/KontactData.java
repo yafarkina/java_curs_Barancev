@@ -4,7 +4,7 @@ package ru.stqa.javaCursBarancev.addressbook.model;
  * Created by yafar_000 on 17.12.2016.
  */
 public class KontactData {
-  private final String id;
+  private int id;
   private final String firstname;
   private final String middlename;
   private final String lastname;
@@ -27,7 +27,7 @@ public class KontactData {
 
     KontactData that = (KontactData) o;
 
-    if (id != null ? !id.equals(that.id) : that.id != null) return false;
+    if (id != that.id) return false;
     if (firstname != null ? !firstname.equals(that.firstname) : that.firstname != null) return false;
     if (lastname != null ? !lastname.equals(that.lastname) : that.lastname != null) return false;
     return address != null ? address.equals(that.address) : that.address == null;
@@ -35,7 +35,7 @@ public class KontactData {
 
   @Override
   public int hashCode() {
-    int result = id != null ? id.hashCode() : 0;
+    int result = id;
     result = 31 * result + (firstname != null ? firstname.hashCode() : 0);
     result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
     result = 31 * result + (address != null ? address.hashCode() : 0);
@@ -52,7 +52,7 @@ public class KontactData {
             '}';
   }
 
-  public KontactData(String id,
+  public KontactData(int id,
                      String firstname,
                      String middlename,
                      String lastname,
@@ -99,7 +99,7 @@ public class KontactData {
                      String group,
                      String address2,
                      String notes) {
-    this.id = null;
+    this.id = 0;
     this.firstname = firstname;
     this.middlename = middlename;
     this.lastname = lastname;
@@ -116,8 +116,12 @@ public class KontactData {
     this.notes = notes;
   }
 
-  public String getId() {
+  public int getId() {
     return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
   }
 
   public String getGroup() {

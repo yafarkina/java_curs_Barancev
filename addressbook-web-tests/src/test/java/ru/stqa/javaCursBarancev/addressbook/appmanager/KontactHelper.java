@@ -83,7 +83,7 @@ public class KontactHelper extends HelperBase {
       String firstname = cells.get(2).getText();
       String lastname = cells.get(1).getText();
       String address = cells.get(3).getText();
-      String id = element.findElement(By.tagName("input")).getAttribute("value");
+      int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
 
       KontactData kontact = new KontactData(
               id,
