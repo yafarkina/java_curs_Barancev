@@ -38,7 +38,7 @@ public class KontactModificationTests extends TestBase {
     List<KontactData> befor = app.getKontactHelper().getKontactList();
     //int befor = app.getKontactHelper().getKontactCount();
     app.getKontactHelper().selectKontact(befor.size()-1);
-    app.getKontactHelper().initKontactModification();
+    app.getKontactHelper().initKontactModification(befor.size()-1);
     KontactData kontact = new KontactData(
              befor.get(befor.size()-1).getId(),
             "firstname2",
