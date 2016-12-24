@@ -37,13 +37,15 @@ public class KontactCreationTests extends TestBase {
     //int after = app.getKontactHelper().getKontactCount();
     Assert.assertEquals(after.size(), befor.size() + 1);
 
-    int max = 0;
-    for (KontactData k: after){
-      if (k.getId() > max) {
-        max = k.getId();
-      }
-    }
-    kontact.setId(max);
+  //  int max = 0;
+    //for (KontactData k: after){
+    //  if (k.getId() > max) {
+    //    max = k.getId();
+    //  }
+    //}
+
+
+    kontact.setId(after.stream().max((o1, o2) -> Integer.compare(o1.getId(), o2.getId())).get().getId());
     befor.add(kontact);
     Assert.assertEquals(new HashSet<Object>(befor), new HashSet<Object>(after));
   }
