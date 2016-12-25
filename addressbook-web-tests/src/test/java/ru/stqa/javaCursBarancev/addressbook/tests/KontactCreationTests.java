@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 
@@ -45,8 +46,12 @@ public class KontactCreationTests extends TestBase {
     //}
 
 
-    kontact.setId(after.stream().max((o1, o2) -> Integer.compare(o1.getId(), o2.getId())).get().getId());
+    kontact.setId(after.stream().max((k1, k2) -> Integer.compare(k1.getId(), k2.getId())).get().getId());
     befor.add(kontact);
-    Assert.assertEquals(new HashSet<Object>(befor), new HashSet<Object>(after));
+    Comparator<? super KontactData> byId = (k1, k2) ->Integer.compare(k1.getId(), k2.getId());
+    befor.sort(byId);
+    after.sort(byId);
+    Assert.assertEquals(befor, after);
+   // Assert.assertEquals(new HashSet<Object>(befor), new HashSet<Object>(after));
   }
 }
