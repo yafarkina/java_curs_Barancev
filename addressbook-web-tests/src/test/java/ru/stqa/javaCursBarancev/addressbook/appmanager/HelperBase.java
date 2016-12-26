@@ -25,7 +25,7 @@ public class HelperBase {
     }
   }
 
-  protected void click(By locator) {
+  public void click(By locator) {
 
     wd.findElement(locator).click();
   }

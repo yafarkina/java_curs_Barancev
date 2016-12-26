@@ -1,6 +1,7 @@
 package ru.stqa.javaCursBarancev.addressbook.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 
@@ -11,9 +12,9 @@ import java.util.List;
  */
 public class KontactDeletionTests extends TestBase {
 
-  @Test
+  @BeforeMethod
 
-  public void testKontactDeletion() {
+  public void insurePreconditions() {
     app.getNavigationHelper().gotoHomePage();
     if (!app.getKontactHelper().isThereAKontact()) {
       app.getNavigationHelper().gotoKontactPage();
@@ -34,20 +35,22 @@ public class KontactDeletionTests extends TestBase {
               null),true);
       app.getNavigationHelper().gotoHomePage();
     }
+  }
 
+  @Test
+
+  public void testKontactDeletion() {
     List<KontactData> befor = app.getKontactHelper().getKontactList();
-    //int befor = app.getKontactHelper().getKontactCount();
-
-    app.getKontactHelper().selectKontact(befor.size()-1);
-    app.getKontactHelper().initKontactModification(befor.size()-1);
+    int index = befor.size()-1;
+    app.getKontactHelper().selectKontact(index);
+    app.getKontactHelper().initKontactModification(index);
     app.getKontactHelper().deleteSelectedKontact();
     app.getNavigationHelper().gotoHomePage();
 
     List<KontactData> after = app.getKontactHelper().getKontactList();
-    //int after = app.getKontactHelper().getKontactCount();
     Assert.assertEquals(after.size(), befor.size() - 1);
 
-    befor.remove(befor.size()-1);
+    befor.remove(index);
     Assert.assertEquals(after, befor);
   }
 

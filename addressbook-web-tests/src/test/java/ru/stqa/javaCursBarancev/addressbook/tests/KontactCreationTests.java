@@ -14,7 +14,6 @@ public class KontactCreationTests extends TestBase {
   public void testKontactCreation() {
     app.getNavigationHelper().gotoHomePage();
     List<KontactData> befor = app.getKontactHelper().getKontactList();
-   // int befor = app.getKontactHelper().getKontactCount();
     app.getNavigationHelper().gotoKontactPage();
     KontactData kontact = new KontactData(
             "first_name",
@@ -35,16 +34,7 @@ public class KontactCreationTests extends TestBase {
     app.getNavigationHelper().gotoHomePage();
 
     List<KontactData> after = app.getKontactHelper().getKontactList();
-    //int after = app.getKontactHelper().getKontactCount();
     Assert.assertEquals(after.size(), befor.size() + 1);
-
-  //  int max = 0;
-    //for (KontactData k: after){
-    //  if (k.getId() > max) {
-    //    max = k.getId();
-    //  }
-    //}
-
 
     kontact.setId(after.stream().max((k1, k2) -> Integer.compare(k1.getId(), k2.getId())).get().getId());
     befor.add(kontact);
@@ -52,6 +42,5 @@ public class KontactCreationTests extends TestBase {
     befor.sort(byId);
     after.sort(byId);
     Assert.assertEquals(befor, after);
-   // Assert.assertEquals(new HashSet<Object>(befor), new HashSet<Object>(after));
-  }
+    }
 }

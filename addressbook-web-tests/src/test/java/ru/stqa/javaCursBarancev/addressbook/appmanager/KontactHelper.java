@@ -50,10 +50,6 @@ public class KontactHelper extends HelperBase {
     wd.findElements(By.name("selected[]")).get(index).click();
   }
 
-  //public void initKontactModification() {
- //   click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
- // }
-
   public void initKontactModification(int index) {
     wd.findElements(By.cssSelector("img[title='Edit']")).get(index).click();
     }
@@ -69,6 +65,13 @@ public class KontactHelper extends HelperBase {
   public void createKontact(KontactData kontact, boolean creation) {
    fillKontactForm(kontact,creation);
    submitKontactCreation();
+  }
+
+  public void modifyKontact(int index, KontactData kontact) {
+    selectKontact(index);
+    initKontactModification(index);
+    fillKontactForm(kontact, false);
+    updateSelectedKontact();
   }
 
   public boolean isThereAKontact() {

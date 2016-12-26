@@ -1,6 +1,7 @@
 package ru.stqa.javaCursBarancev.addressbook.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 
@@ -13,9 +14,8 @@ import java.util.List;
  */
 public class KontactModificationTests extends TestBase {
 
-  @Test
-
-  public void testKontactModification() {
+  @BeforeMethod
+  public void insurePreconditions() {
     app.getNavigationHelper().gotoHomePage();
     if (!app.getKontactHelper().isThereAKontact()) {
       app.getNavigationHelper().gotoKontactPage();
@@ -33,15 +33,19 @@ public class KontactModificationTests extends TestBase {
               "email3@mail.mail",
               "test1",
               "address2",
-              null),true);
+              null), true);
       app.getNavigationHelper().gotoHomePage();
     }
+  }
+
+  @Test
+
+  public void testKontactModification() {
     List<KontactData> befor = app.getKontactHelper().getKontactList();
     //int befor = app.getKontactHelper().getKontactCount();
-    app.getKontactHelper().selectKontact(befor.size()-1);
-    app.getKontactHelper().initKontactModification(befor.size()-1);
+    int index = befor.size()-1;
     KontactData kontact = new KontactData(
-             befor.get(befor.size()-1).getId(),
+            befor.get(index).getId(),
             "firstname2",
             "middlename",
             "lastname",
@@ -56,15 +60,14 @@ public class KontactModificationTests extends TestBase {
             null,
             "address2",
             "notes");
-    app.getKontactHelper().fillKontactForm(kontact, false);
-    app.getKontactHelper().updateSelectedKontact();
+    app.getKontactHelper().modifyKontact(index, kontact);
     app.getNavigationHelper().gotoHomePage();
 
     List<KontactData> after = app.getKontactHelper().getKontactList();
     //int after = app.getKontactHelper().getKontactCount();
     Assert.assertEquals(after.size(), befor.size());
 
-    befor.remove(befor.size()-1);
+    befor.remove(index);
     befor.add(kontact);
     Comparator<? super KontactData> byId = (k1, k2) ->Integer.compare(k1.getId(), k2.getId());
     befor.sort(byId);
