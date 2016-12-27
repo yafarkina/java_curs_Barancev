@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * Created by yafar_000 on 14.12.2016.
- */
+ */ 
 public class KontactHelper extends HelperBase {
 
   public KontactHelper(WebDriver wd) {
@@ -98,22 +98,12 @@ public class KontactHelper extends HelperBase {
       String address = cells.get(3).getText();
       int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
 
-      KontactData kontact = new KontactData(
-              id,
-              firstname,
-              null,
-              lastname,
-              null,
-              null,
-              null,
-              address,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null);
+      KontactData kontact = new KontactData().
+              withId(id).
+              withFirstname(firstname).
+              withLastname(lastname).
+              withAddress(address);
+
       kontacts.add(kontact);
     }
     return kontacts;

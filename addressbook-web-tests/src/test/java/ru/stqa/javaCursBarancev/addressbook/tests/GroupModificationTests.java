@@ -17,7 +17,7 @@ public class GroupModificationTests extends TestBase {
   public void insurePreconditions() {
     app.goTo().GroupPage();
     if (!app.Group().isThereAGroup()) {
-      app.Group().create(new GroupData("test1", null, null));
+      app.Group().create(new GroupData().withName("test1"));
     }
   }
 
@@ -26,7 +26,11 @@ public class GroupModificationTests extends TestBase {
 
     List<GroupData> befor = app.Group().List();
     int index = befor.size() - 1;
-    GroupData group = new GroupData(befor.get(index).getId(),"test1", "test2", "test3");
+    GroupData group = new GroupData().
+            withId(befor.get(index).getId()).
+            withName("test1").
+            withHeader("test2").
+            withFooter("test3");
     app.Group().modify(index, group);
     List<GroupData> after = app.Group().List();
     Assert.assertEquals(after.size(), befor.size());

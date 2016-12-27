@@ -18,21 +18,20 @@ public class KontactDeletionTests extends TestBase {
     app.goTo().HomePage();
     if (!app.Kontact().isThereAKontact()) {
       app.goTo().KontactPage();
-      app.Kontact().create(new KontactData(
-              "first_name",
-              "middlename",
-              "last_name",
-              "nickname",
-              "title",
-              "company",
-              "address",
-              "+79999999999",
-              "email@mail.mail",
-              "email2@mail.mail",
-              "email3@mail.mail",
-              "test1",
-              "address2",
-              null),true);
+      app.Kontact().create(new KontactData().
+                      withFirstname("first_name").
+                      withMiddlename("middlename").
+                      withLastname("last_name").
+                      withNickname("nickname").
+                      withTitle("title").
+                      withCompany("company").
+                      withAddress("address").
+                      withMobile("+79999999999").
+                      withEmail("email@mail.mail").
+                      withEmail2("email2@mail.mail").
+                      withEmail3("email3@mail.mail").
+                      withGroup("test1").withAddress2("address2"),
+                            true);
       app.goTo().HomePage();
     }
   }
