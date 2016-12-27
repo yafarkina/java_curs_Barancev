@@ -46,15 +46,15 @@ public class ApplicationManadger {
     sessionHelper.login("admin", "secret");
   }
 
-  public GroupHelper getGroupHelper() {
+  public GroupHelper Group() {
     return groupHelper;
   }
 
-  public NavigationHelper getNavigationHelper() {
+  public NavigationHelper goTo() {
     return navigationHelper;
   }
 
-  public KontactHelper getKontactHelper() {
+  public KontactHelper Kontact() {
     return kontactHelper;
   }
 }

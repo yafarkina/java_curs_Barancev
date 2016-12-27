@@ -11,19 +11,17 @@ public class GroupDeletionTests extends TestBase {
 
   @BeforeMethod
   public void insurePreconditions() {
-    app.getNavigationHelper().gotoGroupPage();
-    if (!app.getGroupHelper().isThereAGroup()) {
-      app.getGroupHelper().createGroup(new GroupData("test1", null, null));
+    app.goTo().GroupPage();
+    if (!app.Group().isThereAGroup()) {
+      app.Group().create(new GroupData("test1", null, null));
     }
   }
 
   @Test
   public void testGroupDeletion() {
-    List<GroupData> befor = app.getGroupHelper().getGroupList();
-    app.getGroupHelper().selectGroup(befor.size()-1);
-    app.getGroupHelper().deleteSelectedGroups();
-    app.getGroupHelper().returnToGroupPage();
-    List<GroupData> after = app.getGroupHelper().getGroupList();
+    List<GroupData> befor = app.Group().List();
+    app.Group().delete(befor);
+    List<GroupData> after = app.Group().List();
     Assert.assertEquals(after.size(), befor.size()-1);
 
     befor.remove(befor.size()-1);

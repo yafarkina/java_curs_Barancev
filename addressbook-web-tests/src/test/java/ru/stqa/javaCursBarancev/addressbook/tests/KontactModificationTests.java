@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -16,10 +15,10 @@ public class KontactModificationTests extends TestBase {
 
   @BeforeMethod
   public void insurePreconditions() {
-    app.getNavigationHelper().gotoHomePage();
-    if (!app.getKontactHelper().isThereAKontact()) {
-      app.getNavigationHelper().gotoKontactPage();
-      app.getKontactHelper().createKontact(new KontactData(
+    app.goTo().HomePage();
+    if (!app.Kontact().isThereAKontact()) {
+      app.goTo().KontactPage();
+      app.Kontact().create(new KontactData(
               "first_name",
               "middlename",
               "last_name",
@@ -34,15 +33,15 @@ public class KontactModificationTests extends TestBase {
               "test1",
               "address2",
               null), true);
-      app.getNavigationHelper().gotoHomePage();
+      app.goTo().HomePage();
     }
   }
 
   @Test
 
   public void testKontactModification() {
-    List<KontactData> befor = app.getKontactHelper().getKontactList();
-    //int befor = app.getKontactHelper().getKontactCount();
+    List<KontactData> befor = app.Kontact().List();
+    //int befor = app.Kontact().getKontactCount();
     int index = befor.size()-1;
     KontactData kontact = new KontactData(
             befor.get(index).getId(),
@@ -60,11 +59,11 @@ public class KontactModificationTests extends TestBase {
             null,
             "address2",
             "notes");
-    app.getKontactHelper().modifyKontact(index, kontact);
-    app.getNavigationHelper().gotoHomePage();
+    app.Kontact().modify(index, kontact);
+    app.goTo().HomePage();
 
-    List<KontactData> after = app.getKontactHelper().getKontactList();
-    //int after = app.getKontactHelper().getKontactCount();
+    List<KontactData> after = app.Kontact().List();
+    //int after = app.Kontact().getKontactCount();
     Assert.assertEquals(after.size(), befor.size());
 
     befor.remove(index);

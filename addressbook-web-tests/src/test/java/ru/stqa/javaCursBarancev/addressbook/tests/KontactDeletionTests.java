@@ -15,10 +15,10 @@ public class KontactDeletionTests extends TestBase {
   @BeforeMethod
 
   public void insurePreconditions() {
-    app.getNavigationHelper().gotoHomePage();
-    if (!app.getKontactHelper().isThereAKontact()) {
-      app.getNavigationHelper().gotoKontactPage();
-      app.getKontactHelper().createKontact(new KontactData(
+    app.goTo().HomePage();
+    if (!app.Kontact().isThereAKontact()) {
+      app.goTo().KontactPage();
+      app.Kontact().create(new KontactData(
               "first_name",
               "middlename",
               "last_name",
@@ -33,25 +33,25 @@ public class KontactDeletionTests extends TestBase {
               "test1",
               "address2",
               null),true);
-      app.getNavigationHelper().gotoHomePage();
+      app.goTo().HomePage();
     }
   }
 
   @Test
 
   public void testKontactDeletion() {
-    List<KontactData> befor = app.getKontactHelper().getKontactList();
+    List<KontactData> befor = app.Kontact().List();
     int index = befor.size()-1;
-    app.getKontactHelper().selectKontact(index);
-    app.getKontactHelper().initKontactModification(index);
-    app.getKontactHelper().deleteSelectedKontact();
-    app.getNavigationHelper().gotoHomePage();
+    app.Kontact().delete(index);
+    app.goTo().HomePage();
 
-    List<KontactData> after = app.getKontactHelper().getKontactList();
+    List<KontactData> after = app.Kontact().List();
     Assert.assertEquals(after.size(), befor.size() - 1);
 
     befor.remove(index);
     Assert.assertEquals(after, befor);
   }
+
+
 
 }

@@ -62,12 +62,18 @@ public class KontactHelper extends HelperBase {
     click(By.xpath("//div[@id='content']/form[1]/input[22]"));
   }
 
-  public void createKontact(KontactData kontact, boolean creation) {
+  public void create(KontactData kontact, boolean creation) {
    fillKontactForm(kontact,creation);
    submitKontactCreation();
+   }
+
+  public void delete(int index) {
+    selectKontact(index);
+    initKontactModification(index);
+    deleteSelectedKontact();
   }
 
-  public void modifyKontact(int index, KontactData kontact) {
+  public void modify(int index, KontactData kontact) {
     selectKontact(index);
     initKontactModification(index);
     fillKontactForm(kontact, false);
@@ -82,7 +88,7 @@ public class KontactHelper extends HelperBase {
     return wd.findElements(By.name("selected[]")).size();
   }
 
-  public List<KontactData> getKontactList() {
+  public List<KontactData> List() {
     List<KontactData> kontacts = new ArrayList<KontactData>();
     List<WebElement> elements = wd.findElements(By.cssSelector("tr[name='entry']"));
       for (WebElement element: elements){

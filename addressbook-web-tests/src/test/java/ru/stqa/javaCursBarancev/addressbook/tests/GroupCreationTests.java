@@ -6,18 +6,17 @@ import org.testng.annotations.Test;
 import ru.stqa.javaCursBarancev.addressbook.model.GroupData;
 
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.List;
 
 public class GroupCreationTests extends TestBase {
 
   @Test
   public void testGroupCreation() {
-    app.getNavigationHelper().gotoGroupPage();
-    List<GroupData> befor = app.getGroupHelper().getGroupList();
+    app.goTo().GroupPage();
+    List<GroupData> befor = app.Group().List();
     GroupData group = new GroupData("test1", null, null);
-    app.getGroupHelper().createGroup(group);
-    List<GroupData> after = app.getGroupHelper().getGroupList();
+    app.Group().create(group);
+    List<GroupData> after = app.Group().List();
     Assert.assertEquals(after.size(), befor.size() + 1);
     group.setId(after.stream().max((o1, o2) -> Integer.compare(o1.getId(), o2.getId())).get().getId());
     befor.add(group);

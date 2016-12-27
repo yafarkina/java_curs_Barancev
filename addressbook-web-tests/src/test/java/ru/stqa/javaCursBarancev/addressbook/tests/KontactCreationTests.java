@@ -5,16 +5,15 @@ import org.testng.annotations.Test;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.List;
 
 public class KontactCreationTests extends TestBase {
 
   @Test
   public void testKontactCreation() {
-    app.getNavigationHelper().gotoHomePage();
-    List<KontactData> befor = app.getKontactHelper().getKontactList();
-    app.getNavigationHelper().gotoKontactPage();
+    app.goTo().HomePage();
+    List<KontactData> befor = app.Kontact().List();
+    app.goTo().KontactPage();
     KontactData kontact = new KontactData(
             "first_name",
             "middlename",
@@ -30,10 +29,10 @@ public class KontactCreationTests extends TestBase {
             "test1",
             "address2",
             null);
-    app.getKontactHelper().createKontact(kontact ,true);
-    app.getNavigationHelper().gotoHomePage();
+    app.Kontact().create(kontact ,true);
+    app.goTo().HomePage();
 
-    List<KontactData> after = app.getKontactHelper().getKontactList();
+    List<KontactData> after = app.Kontact().List();
     Assert.assertEquals(after.size(), befor.size() + 1);
 
     kontact.setId(after.stream().max((k1, k2) -> Integer.compare(k1.getId(), k2.getId())).get().getId());
