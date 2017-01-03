@@ -52,9 +52,17 @@ public class KontactHelper extends HelperBase {
     wd.findElements(By.name("selected[]")).get(index).click();
   }
 
-  public void initKontactModification(int index) {
+  private void selectKontactById(int id) {
+    wd.findElement(By.cssSelector("input[value ='" + id + "' ]")).click();
+  }
+
+ public void initKontactModification(int index) {
     wd.findElements(By.cssSelector("img[title='Edit']")).get(index).click();
-    }
+   }
+
+  public void initKontactModificationById(int id) {
+    wd.findElement(By.cssSelector("a[href='" + "edit.php?id=" + id + "']")).click();
+  }
 
   public void deleteSelectedKontact() {
     click(By.xpath("//div[@id='content']/form[2]/input[2]"));
@@ -69,15 +77,22 @@ public class KontactHelper extends HelperBase {
    submitKontactCreation();
    }
 
-  public void delete(int index) {
-    selectKontact(index);
-    initKontactModification(index);
+  public void delete(KontactData kontact) {
+    selectKontactById(kontact.getId());
+    initKontactModificationById(kontact.getId());
     deleteSelectedKontact();
   }
 
-  public void modify(int index, KontactData kontact) {
+   public void modify(int index, KontactData kontact) {
     selectKontact(index);
     initKontactModification(index);
+    fillKontactForm(kontact, false);
+    updateSelectedKontact();
+  }
+
+  public void modify(KontactData kontact) {
+    selectKontactById(kontact.getId());
+    initKontactModificationById(kontact.getId());
     fillKontactForm(kontact, false);
     updateSelectedKontact();
   }
@@ -131,4 +146,6 @@ public class KontactHelper extends HelperBase {
     }
     return kontacts;
   }
+
+
 }

@@ -7,6 +7,7 @@ import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by yafar_000 on 15.12.2016.
@@ -39,11 +40,11 @@ public class KontactModificationTests extends TestBase {
   @Test
 
   public void testKontactModification() {
-    List<KontactData> befor = app.Kontact().List();
-    //int befor = app.Kontact().getKontactCount();
+    Set<KontactData> befor = app.Kontact().all();
+    KontactData modifiedKontact = befor.iterator().next();
     int index = befor.size()-1;
     KontactData kontact = new KontactData().
-            withId(befor.get(index).getId()).
+            withId(modifiedKontact.getId()).
             withFirstname("firstname2").
             withMiddlename("middlename").
             withLastname("lastname").
@@ -58,18 +59,14 @@ public class KontactModificationTests extends TestBase {
             withAddress2("address2").
             withNotes("notes");
 
-    app.Kontact().modify(index, kontact);
+    app.Kontact().modify(kontact);
     app.goTo().HomePage();
 
-    List<KontactData> after = app.Kontact().List();
-    //int after = app.Kontact().getKontactCount();
+    Set<KontactData> after = app.Kontact().all();
     Assert.assertEquals(after.size(), befor.size());
 
-    befor.remove(index);
+    befor.remove(modifiedKontact);
     befor.add(kontact);
-    Comparator<? super KontactData> byId = (k1, k2) ->Integer.compare(k1.getId(), k2.getId());
-    befor.sort(byId);
-    after.sort(byId);
     Assert.assertEquals(befor, after);
    // Assert.assertEquals(new HashSet<Object>(befor), new HashSet<Object>(after));
   }

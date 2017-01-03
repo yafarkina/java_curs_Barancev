@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by yafar_000 on 15.12.2016.
@@ -39,15 +40,15 @@ public class KontactDeletionTests extends TestBase {
   @Test
 
   public void testKontactDeletion() {
-    List<KontactData> befor = app.Kontact().List();
-    int index = befor.size()-1;
-    app.Kontact().delete(index);
+    Set<KontactData> befor = app.Kontact().all();
+    KontactData deletedKontact = befor.iterator().next();
+    app.Kontact().delete(deletedKontact);
     app.goTo().HomePage();
 
-    List<KontactData> after = app.Kontact().List();
+    Set<KontactData> after = app.Kontact().all();
     Assert.assertEquals(after.size(), befor.size() - 1);
 
-    befor.remove(index);
+    befor.remove(deletedKontact);
     Assert.assertEquals(after, befor);
   }
 
