@@ -6,13 +6,15 @@ import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 
 public class KontactCreationTests extends TestBase {
 
   @Test
   public void testKontactCreation() {
     app.goTo().HomePage();
-    List<KontactData> befor = app.Kontact().List();
+    Set<KontactData> befor = app.Kontact().all();
+
     app.goTo().KontactPage();
     KontactData kontact = new KontactData().
             withFirstname("first_name").
@@ -32,14 +34,11 @@ public class KontactCreationTests extends TestBase {
     app.Kontact().create(kontact ,true);
     app.goTo().HomePage();
 
-    List<KontactData> after = app.Kontact().List();
+    Set<KontactData> after = app.Kontact().all();
     Assert.assertEquals(after.size(), befor.size() + 1);
 
-    kontact.withId(after.stream().max((k1, k2) -> Integer.compare(k1.getId(), k2.getId())).get().getId());
+    kontact.withId(after.stream().mapToInt(k -> k.getId()).max().getAsInt());
     befor.add(kontact);
-    Comparator<? super KontactData> byId = (k1, k2) ->Integer.compare(k1.getId(), k2.getId());
-    befor.sort(byId);
-    after.sort(byId);
     Assert.assertEquals(befor, after);
     }
 }

@@ -9,7 +9,9 @@ import org.testng.Assert;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by yafar_000 on 14.12.2016.
@@ -91,7 +93,28 @@ public class KontactHelper extends HelperBase {
   public List<KontactData> List() {
     List<KontactData> kontacts = new ArrayList<KontactData>();
     List<WebElement> elements = wd.findElements(By.cssSelector("tr[name='entry']"));
-      for (WebElement element: elements){
+    for (WebElement element: elements){
+      List<WebElement> cells= element.findElements(By.tagName("td"));
+      String firstname = cells.get(2).getText();
+      String lastname = cells.get(1).getText();
+      String address = cells.get(3).getText();
+      int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
+
+      KontactData kontact = new KontactData().
+              withId(id).
+              withFirstname(firstname).
+              withLastname(lastname).
+              withAddress(address);
+
+      kontacts.add(kontact);
+    }
+    return kontacts;
+  }
+
+  public Set<KontactData> all() {
+    Set<KontactData> kontacts = new HashSet<KontactData>();
+    List<WebElement> elements = wd.findElements(By.cssSelector("tr[name='entry']"));
+    for (WebElement element: elements){
       List<WebElement> cells= element.findElements(By.tagName("td"));
       String firstname = cells.get(2).getText();
       String lastname = cells.get(1).getText();
