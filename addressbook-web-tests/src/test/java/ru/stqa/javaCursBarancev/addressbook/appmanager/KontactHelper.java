@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  * Created by yafar_000 on 14.12.2016.
- */ 
+ */
 public class KontactHelper extends HelperBase {
 
   public KontactHelper(WebDriver wd) {
