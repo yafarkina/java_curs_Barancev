@@ -1,14 +1,12 @@
 package ru.stqa.javaCursBarancev.addressbook.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -83,13 +81,6 @@ public class KontactHelper extends HelperBase {
     deleteSelectedKontact();
   }
 
-   public void modify(int index, KontactData kontact) {
-    selectKontact(index);
-    initKontactModification(index);
-    fillKontactForm(kontact, false);
-    updateSelectedKontact();
-  }
-
   public void modify(KontactData kontact) {
     selectKontactById(kontact.getId());
     initKontactModificationById(kontact.getId());
@@ -105,28 +96,7 @@ public class KontactHelper extends HelperBase {
     return wd.findElements(By.name("selected[]")).size();
   }
 
-  public List<KontactData> List() {
-    List<KontactData> kontacts = new ArrayList<KontactData>();
-    List<WebElement> elements = wd.findElements(By.cssSelector("tr[name='entry']"));
-    for (WebElement element: elements){
-      List<WebElement> cells= element.findElements(By.tagName("td"));
-      String firstname = cells.get(2).getText();
-      String lastname = cells.get(1).getText();
-      String address = cells.get(3).getText();
-      int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-
-      KontactData kontact = new KontactData().
-              withId(id).
-              withFirstname(firstname).
-              withLastname(lastname).
-              withAddress(address);
-
-      kontacts.add(kontact);
-    }
-    return kontacts;
-  }
-
-  public Set<KontactData> all() {
+ public Set<KontactData> all() {
     Set<KontactData> kontacts = new HashSet<KontactData>();
     List<WebElement> elements = wd.findElements(By.cssSelector("tr[name='entry']"));
     for (WebElement element: elements){

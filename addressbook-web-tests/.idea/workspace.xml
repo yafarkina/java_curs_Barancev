@@ -24,65 +24,7 @@
     <favorites_list name="addressbook-web-tests" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="KontactHelper.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/appmanager/KontactHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-              <folding>
-                <element signature="e#1890#1891#0" expanded="true" />
-                <element signature="e#1969#1970#0" expanded="true" />
-                <element signature="e#2285#2286#0" expanded="true" />
-                <element signature="e#2351#2352#0" expanded="true" />
-                <element signature="e#3430#3443#0" expanded="true" />
-                <element signature="e#4210#4223#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KontactCreationTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/KontactCreationTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="39" column="53" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="77" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KontactModificationTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/KontactModificationTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="61" column="21" lean-forward="false" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="KontactDeletionTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/KontactDeletionTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="43" column="44" lean-forward="true" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GroupModificationTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/GroupModificationTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -389,10 +331,10 @@
         <option value="$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/GroupModificationTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/GroupDeletionTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/GroupCreationTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/appmanager/KontactHelper.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/KontactCreationTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/KontactDeletionTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/KontactModificationTests.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/appmanager/KontactHelper.java" />
       </list>
     </option>
   </component>
@@ -1115,8 +1057,8 @@
         <state relative-caret-position="867">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding>
-            <element signature="e#2285#2286#0" expanded="true" />
-            <element signature="e#2351#2352#0" expanded="true" />
+            <element signature="e#2206#2207#0" expanded="true" />
+            <element signature="e#2272#2273#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1170,8 +1112,8 @@
         <state relative-caret-position="680">
           <caret line="40" column="64" lean-forward="false" selection-start-line="40" selection-start-column="64" selection-end-line="40" selection-end-column="64" />
           <folding>
-            <element signature="e#2285#2286#0" expanded="true" />
-            <element signature="e#2351#2352#0" expanded="true" />
+            <element signature="e#2206#2207#0" expanded="true" />
+            <element signature="e#2272#2273#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1233,8 +1175,8 @@
         <state relative-caret-position="357">
           <caret line="21" column="31" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
           <folding>
-            <element signature="e#2285#2286#0" expanded="true" />
-            <element signature="e#2351#2352#0" expanded="true" />
+            <element signature="e#2206#2207#0" expanded="true" />
+            <element signature="e#2272#2273#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1296,8 +1238,8 @@
         <state relative-caret-position="221">
           <caret line="18" column="39" lean-forward="true" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
           <folding>
-            <element signature="e#2285#2286#0" expanded="true" />
-            <element signature="e#2351#2352#0" expanded="true" />
+            <element signature="e#2206#2207#0" expanded="true" />
+            <element signature="e#2272#2273#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1459,14 +1401,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/KontactCreationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="39" column="53" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/GroupDeletionTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1551,14 +1485,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/KontactDeletionTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="43" column="44" lean-forward="true" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/GroupModificationTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -1567,25 +1493,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/KontactDeletionTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="42" column="44" lean-forward="false" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/KontactModificationTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="61" column="21" lean-forward="false" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
+        <state relative-caret-position="1122">
+          <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/KontactCreationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="37" column="53" lean-forward="false" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="77" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/appmanager/KontactHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="91" column="0" lean-forward="true" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+        <state relative-caret-position="1309">
+          <caret line="98" column="1" lean-forward="false" selection-start-line="98" selection-start-column="1" selection-end-line="98" selection-end-column="1" />
           <folding>
+            <element signature="e#1811#1812#0" expanded="true" />
             <element signature="e#1890#1891#0" expanded="true" />
-            <element signature="e#1969#1970#0" expanded="true" />
-            <element signature="e#2285#2286#0" expanded="true" />
-            <element signature="e#2351#2352#0" expanded="true" />
-            <element signature="e#3430#3443#0" expanded="true" />
-            <element signature="e#4210#4223#0" expanded="true" />
+            <element signature="e#2206#2207#0" expanded="true" />
+            <element signature="e#2272#2273#0" expanded="true" />
+            <element signature="e#3156#3169#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -4,8 +4,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 
-import java.util.Comparator;
-import java.util.List;
 import java.util.Set;
 
 public class KontactCreationTests extends TestBase {
