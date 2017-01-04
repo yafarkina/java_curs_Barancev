@@ -63,9 +63,8 @@ public class KontactModificationTests extends TestBase {
 
     app.Kontact().modify(kontact);
     app.goTo().HomePage();
-
+    assertThat(app.Kontact().getKontactCount(), equalTo(befor.size()));
     Kontacts after = app.Kontact().all();
-    assertThat(after.size(),equalTo( befor.size()));
     assertThat(after, equalTo(befor.withOut(modifiedKontact).withAdded(kontact)));
   }
 }

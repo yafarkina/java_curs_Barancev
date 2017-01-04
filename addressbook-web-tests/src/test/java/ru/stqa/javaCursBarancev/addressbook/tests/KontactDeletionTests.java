@@ -44,9 +44,8 @@ public class KontactDeletionTests extends TestBase {
     KontactData deletedKontact = befor.iterator().next();
     app.Kontact().delete(deletedKontact);
     app.goTo().HomePage();
-
+    assertThat(app.Kontact().getKontactCount(), equalTo(befor.size() - 1));
     Kontacts after = app.Kontact().all();
-    assertThat(after.size(), equalTo(befor.size() - 1));
     assertThat(after, equalTo(befor.withOut(deletedKontact)));
   }
 }

@@ -32,9 +32,8 @@ public class KontactCreationTests extends TestBase {
 
     app.Kontact().create(kontact ,true);
     app.goTo().HomePage();
-
+    assertThat(app.Kontact().getKontactCount(), equalTo(befor.size() + 1));
     Kontacts after = app.Kontact().all();
-    assertThat(after.size(), equalTo(befor.size() + 1));
     assertThat(after, equalTo
             (befor.withAdded(kontact.withId(after.stream().mapToInt(k -> k.getId()).max().getAsInt()))));
     }
