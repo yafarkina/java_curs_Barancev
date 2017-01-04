@@ -1,11 +1,12 @@
 package ru.stqa.javaCursBarancev.addressbook.tests;
 
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
+import ru.stqa.javaCursBarancev.addressbook.model.Kontacts;
 
-import java.util.Set;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
  * Created by yafar_000 on 15.12.2016.
@@ -39,18 +40,13 @@ public class KontactDeletionTests extends TestBase {
   @Test
 
   public void testKontactDeletion() {
-    Set<KontactData> befor = app.Kontact().all();
+    Kontacts befor = app.Kontact().all();
     KontactData deletedKontact = befor.iterator().next();
     app.Kontact().delete(deletedKontact);
     app.goTo().HomePage();
 
-    Set<KontactData> after = app.Kontact().all();
-    Assert.assertEquals(after.size(), befor.size() - 1);
-
-    befor.remove(deletedKontact);
-    Assert.assertEquals(after, befor);
+    Kontacts after = app.Kontact().all();
+    assertThat(after.size(), equalTo(befor.size() - 1));
+    assertThat(after, equalTo(befor.withOut(deletedKontact)));
   }
-
-
-
 }

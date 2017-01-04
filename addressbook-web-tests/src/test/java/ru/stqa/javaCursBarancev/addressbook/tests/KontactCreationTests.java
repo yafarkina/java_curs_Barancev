@@ -1,17 +1,18 @@
 package ru.stqa.javaCursBarancev.addressbook.tests;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
+import ru.stqa.javaCursBarancev.addressbook.model.Kontacts;
 
-import java.util.Set;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class KontactCreationTests extends TestBase {
 
   @Test
   public void testKontactCreation() {
     app.goTo().HomePage();
-    Set<KontactData> befor = app.Kontact().all();
+    Kontacts befor = app.Kontact().all();
 
     app.goTo().KontactPage();
     KontactData kontact = new KontactData().
@@ -32,11 +33,9 @@ public class KontactCreationTests extends TestBase {
     app.Kontact().create(kontact ,true);
     app.goTo().HomePage();
 
-    Set<KontactData> after = app.Kontact().all();
-    Assert.assertEquals(after.size(), befor.size() + 1);
-
-    kontact.withId(after.stream().mapToInt(k -> k.getId()).max().getAsInt());
-    befor.add(kontact);
-    Assert.assertEquals(befor, after);
+    Kontacts after = app.Kontact().all();
+    assertThat(after.size(), equalTo(befor.size() + 1));
+    assertThat(after, equalTo
+            (befor.withAdded(kontact.withId(after.stream().mapToInt(k -> k.getId()).max().getAsInt()))));
     }
 }

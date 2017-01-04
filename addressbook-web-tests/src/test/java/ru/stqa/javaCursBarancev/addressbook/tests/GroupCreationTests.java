@@ -1,27 +1,25 @@
 package ru.stqa.javaCursBarancev.addressbook.tests;
 
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.javaCursBarancev.addressbook.model.GroupData;
+import ru.stqa.javaCursBarancev.addressbook.model.Groups;
 
-import java.util.Set;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class GroupCreationTests extends TestBase {
 
   @Test
   public void testGroupCreation() {
     app.goTo().GroupPage();
-    Set<GroupData> befor = app.Group().all();
+    Groups befor = app.Group().all();
     GroupData group = new GroupData().withName("test1");
     app.Group().create(group);
-    Set<GroupData> after = app.Group().all();
-    Assert.assertEquals(after.size(), befor.size() + 1);
-    group.withId(after.stream().max((o1, o2) -> Integer.compare(o1.getId(), o2.getId())).get().getId());
-
-    group.withId(after.stream().mapToInt(g -> g.getId()).max().getAsInt());
-    befor.add(group);
-    Assert.assertEquals(befor, after);
+    Groups after = app.Group().all();
+    assertThat(after.size(), equalTo(befor.size() + 1));
+    assertThat(after, equalTo(
+            befor.withAdded(group.withId(after.stream().mapToInt(g -> g.getId()).max().getAsInt()))));
   }
 
 }

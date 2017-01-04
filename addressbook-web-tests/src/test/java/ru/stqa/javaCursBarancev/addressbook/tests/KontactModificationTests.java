@@ -4,8 +4,12 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
+import ru.stqa.javaCursBarancev.addressbook.model.Kontacts;
 
 import java.util.Set;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
  * Created by yafar_000 on 15.12.2016.
@@ -38,7 +42,7 @@ public class KontactModificationTests extends TestBase {
   @Test
 
   public void testKontactModification() {
-    Set<KontactData> befor = app.Kontact().all();
+    Kontacts befor = app.Kontact().all();
     KontactData modifiedKontact = befor.iterator().next();
     int index = befor.size()-1;
     KontactData kontact = new KontactData().
@@ -60,12 +64,8 @@ public class KontactModificationTests extends TestBase {
     app.Kontact().modify(kontact);
     app.goTo().HomePage();
 
-    Set<KontactData> after = app.Kontact().all();
-    Assert.assertEquals(after.size(), befor.size());
-
-    befor.remove(modifiedKontact);
-    befor.add(kontact);
-    Assert.assertEquals(befor, after);
-   // Assert.assertEquals(new HashSet<Object>(befor), new HashSet<Object>(after));
+    Kontacts after = app.Kontact().all();
+    assertThat(after.size(),equalTo( befor.size()));
+    assertThat(after, equalTo(befor.withOut(modifiedKontact).withAdded(kontact)));
   }
 }

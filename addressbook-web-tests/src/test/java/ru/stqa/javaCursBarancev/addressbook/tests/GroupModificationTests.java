@@ -1,11 +1,12 @@
 package ru.stqa.javaCursBarancev.addressbook.tests;
 
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.javaCursBarancev.addressbook.model.GroupData;
+import ru.stqa.javaCursBarancev.addressbook.model.Groups;
 
-import java.util.Set;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
  * Created by yafar_000 on 15.12.2016.
@@ -23,7 +24,7 @@ public class GroupModificationTests extends TestBase {
   @Test
   public void testGroupModification() {
 
-    Set<GroupData> befor = app.Group().all();
+    Groups befor = app.Group().all();
     GroupData modifiedGroup = befor.iterator().next();
     GroupData group = new GroupData().
             withId(modifiedGroup.getId()).
@@ -31,14 +32,8 @@ public class GroupModificationTests extends TestBase {
             withHeader("test2").
             withFooter("test3");
     app.Group().modify(group);
-    Set<GroupData> after = app.Group().all();
-    Assert.assertEquals(after.size(), befor.size());
-
-    befor.remove(modifiedGroup);
-    befor.add(group);
-    Assert.assertEquals(befor, after);
+    Groups after = app.Group().all();
+    assertThat(after.size(), equalTo(befor.size()));
+    assertThat(after, equalTo(befor.withOut(modifiedGroup).withAdded(group)));
   }
-
-
-
 }
