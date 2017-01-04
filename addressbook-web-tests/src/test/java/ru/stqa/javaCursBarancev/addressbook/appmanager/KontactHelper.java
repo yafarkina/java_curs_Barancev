@@ -74,12 +74,14 @@ public class KontactHelper extends HelperBase {
   public void create(KontactData kontact, boolean creation) {
    fillKontactForm(kontact,creation);
    submitKontactCreation();
+    kontactCache = null;
    }
 
   public void delete(KontactData kontact) {
     selectKontactById(kontact.getId());
     initKontactModificationById(kontact.getId());
     deleteSelectedKontact();
+    kontactCache = null;
   }
 
   public void modify(KontactData kontact) {
@@ -87,6 +89,7 @@ public class KontactHelper extends HelperBase {
     initKontactModificationById(kontact.getId());
     fillKontactForm(kontact, false);
     updateSelectedKontact();
+    kontactCache = null;
   }
 
   public boolean isThereAKontact() {
@@ -97,8 +100,13 @@ public class KontactHelper extends HelperBase {
     return wd.findElements(By.name("selected[]")).size();
   }
 
+private Kontacts kontactCache = null;
+
  public Kontacts all() {
-    Kontacts kontacts = new Kontacts();
+   if (kontactCache !=null) {
+     return new Kontacts(kontactCache);
+   }
+   kontactCache = new Kontacts();
     List<WebElement> elements = wd.findElements(By.cssSelector("tr[name='entry']"));
     for (WebElement element: elements){
       List<WebElement> cells= element.findElements(By.tagName("td"));
@@ -113,9 +121,9 @@ public class KontactHelper extends HelperBase {
               withLastname(lastname).
               withAddress(address);
 
-      kontacts.add(kontact);
+      kontactCache.add(kontact);
     }
-    return kontacts;
+    return new Kontacts(kontactCache);
   }
 
 
