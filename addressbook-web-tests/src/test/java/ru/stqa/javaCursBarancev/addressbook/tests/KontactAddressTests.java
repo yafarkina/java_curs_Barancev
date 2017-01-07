@@ -13,7 +13,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 /**
  * Created by yafar_000 on 07.01.2017.
  */
-public class KontactEmailTests extends TestBase {
+public class KontactAddressTests extends TestBase {
 
   @BeforeMethod
 
@@ -42,24 +42,17 @@ public class KontactEmailTests extends TestBase {
   }
 
   @Test
-  public void testKontactEmails() {
+  public void testKontactAddress() {
     KontactData kontact = app.Kontact().all().iterator().next();
     KontactData kontactInfoFromEditForm = app.Kontact().infoFromEditForm(kontact);
     app.goTo().HomePage();
 
-    assertThat(kontact.getAllEmails(), equalTo(mergeEmails(kontactInfoFromEditForm)));
+    assertThat(kontact.getAddress(), equalTo(mergeAddress(kontactInfoFromEditForm)));
   }
 
-  public String mergeEmails(KontactData kontact) {
-    return Arrays
-            .asList(kontact.getEmail(), kontact.getEmail2(), kontact.getEmail3())
-            .stream().filter(s -> !s.equals(""))
-            .map(KontactEmailTests::cleaned)
-            .collect(Collectors.joining("\n"));
-  }
+  public String mergeAddress(KontactData kontact) {
+   return kontact.getAddress();
+   }
 
-  public static String cleaned(String email) {
-    return email.replaceAll("\\s", "");
-  }
 
 }
