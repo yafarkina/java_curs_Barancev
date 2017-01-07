@@ -12,13 +12,17 @@ public class KontactData {
   private  String title;
   private  String company;
   private  String address;
+  private String homePhone;
   private  String mobile;
+  private  String allPhones;
+  private String workPhone;
   private  String email;
   private  String email2;
   private  String email3;
   private  String group;
   private  String address2;
   private  String notes;
+
 
   @Override
   public boolean equals(Object o) {
@@ -76,7 +80,7 @@ public class KontactData {
     return company;
   }
 
-  public String getMobile() {
+  public String getMobilePhone() {
     return mobile;
   }
 
@@ -110,6 +114,18 @@ public class KontactData {
 
   public String getLastname() {
     return lastname;
+  }
+
+  public String getHomePhone() {
+    return homePhone;
+  }
+
+  public String getWorkPhone() {
+    return workPhone;
+  }
+
+  public String getAllPhones() {
+    return allPhones;
   }
 
   public KontactData withId(int id) {
@@ -184,6 +200,22 @@ public class KontactData {
 
   public KontactData withNotes(String notes) {
     this.notes = notes;
+    return this;
+  }
+
+
+  public KontactData withHomePhone(String homePhone) {
+    this.homePhone = homePhone;
+    return this;
+  }
+
+  public KontactData withWorkPhone(String workPhone) {
+    this.workPhone = workPhone;
+    return this;
+  }
+
+  public KontactData withAllPhones(String allPones) {
+    this.allPhones = allPones;
     return this;
   }
 }

@@ -8,9 +8,7 @@ import org.testng.Assert;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 import ru.stqa.javaCursBarancev.addressbook.model.Kontacts;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by yafar_000 on 14.12.2016.
@@ -25,6 +23,10 @@ public class KontactHelper extends HelperBase {
     wd.findElement(By.xpath("//div[@id='content']/form/input[21]")).click();
   }
 
+  public Kontacts getKontactCache() {
+    return kontactCache;
+  }
+
   public void fillKontactForm(KontactData kontactData, boolean creation) {
     type(By.name("firstname"), kontactData.getFirstname());
     type(By.name("middlename"), kontactData.getMiddlename());
@@ -36,7 +38,9 @@ public class KontactHelper extends HelperBase {
     type(By.name("email"), kontactData.getEmail());
     type(By.name("email2"), kontactData.getEmail2());
     type(By.name("email3"), kontactData.getEmail3());
-    type(By.name("mobile"), kontactData.getMobile());
+    type(By.name("home"), kontactData.getHomePhone());
+    type(By.name("mobile"), kontactData.getMobilePhone());
+    type(By.name("work"), kontactData.getWorkPhone());
     type(By.name("address2"), kontactData.getAddress2());
     type(By.name("notes"), kontactData.getNotes());
 
@@ -92,6 +96,8 @@ public class KontactHelper extends HelperBase {
     kontactCache = null;
   }
 
+
+
   public boolean isThereAKontact() {
     return isElementPresent(By.name("selected[]"));
   }
@@ -113,13 +119,15 @@ private Kontacts kontactCache = null;
       String firstname = cells.get(2).getText();
       String lastname = cells.get(1).getText();
       String address = cells.get(3).getText();
+      String allPhones = cells.get(5).getText();
       int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
 
       KontactData kontact = new KontactData().
               withId(id).
               withFirstname(firstname).
               withLastname(lastname).
-              withAddress(address);
+              withAddress(address).
+              withAllPhones(allPhones);
 
       kontactCache.add(kontact);
     }
@@ -127,4 +135,23 @@ private Kontacts kontactCache = null;
   }
 
 
+  public KontactData infoFromEditForm(KontactData kontact) {
+    initKontactModificationById(kontact.getId());
+    String firstname = wd.findElement(By.name("firstname")).getAttribute("value");
+    String lastname = wd.findElement(By.name("lastname")).getAttribute("value");
+    String address = wd.findElement(By.name("address")).getAttribute("value");
+    String homePhone = wd.findElement(By.name("home")).getAttribute("value");
+    String mobilePhone = wd.findElement(By.name("mobile")).getAttribute("value");
+    String workPhone = wd.findElement(By.name("work")).getAttribute("value");
+
+    return new KontactData().
+            withId(kontact.getId()).
+            withFirstname(firstname).
+            withLastname(lastname).
+            withAddress(address).
+            withHomePhone(homePhone).
+            withMobile(mobilePhone).
+            withWorkPhone(workPhone);
+
+  }
 }

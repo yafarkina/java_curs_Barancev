@@ -1,17 +1,20 @@
 package ru.stqa.javaCursBarancev.addressbook.tests;
 
+import org.hamcrest.CoreMatchers;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
-import ru.stqa.javaCursBarancev.addressbook.model.Kontacts;
+
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
- * Created by yafar_000 on 15.12.2016.
+ * Created by yafar_000 on 07.01.2017.
  */
-public class KontactModificationTests extends TestBase {
+public class KontactPhoneTests extends TestBase {
 
   @BeforeMethod
   public void insurePreconditions() {
@@ -26,7 +29,9 @@ public class KontactModificationTests extends TestBase {
                       withTitle("title").
                       withCompany("company").
                       withAddress("address").
+                      withHomePhone("22222222").
                       withMobile("+79999999999").
+                      withWorkPhone("33333333").
                       withEmail("email@mail.mail").
                       withEmail2("email2@mail.mail").
                       withEmail3("email3@mail.mail").
@@ -37,31 +42,23 @@ public class KontactModificationTests extends TestBase {
   }
 
   @Test
-
-  public void testKontactModification() {
-    Kontacts befor = app.Kontact().all();
-    KontactData modifiedKontact = befor.iterator().next();
-    int index = befor.size()-1;
-    KontactData kontact = new KontactData().
-            withId(modifiedKontact.getId()).
-            withFirstname("firstname2").
-            withMiddlename("middlename").
-            withLastname("lastname").
-            withNickname("nickname").
-            withTitle("title").
-            withCompany("company").
-            withAddress("address").
-            withMobile("+79999999999").
-            withEmail("email@mail.mail").
-            withEmail2("email2@mail.mail").
-            withEmail3("email3@mail.mail").
-            withAddress2("address2").
-            withNotes("notes");
-
-    app.Kontact().modify(kontact);
+  public void testKontactPhones() {
+    KontactData kontact = app.Kontact().all().iterator().next();
+    KontactData kontactInfoFromEditForm = app.Kontact().infoFromEditForm(kontact);
     app.goTo().HomePage();
-    assertThat(app.Kontact().getKontactCount(), equalTo(befor.size()));
-    Kontacts after = app.Kontact().all();
-    assertThat(after, equalTo(befor.withOut(modifiedKontact).withAdded(kontact)));
+
+    assertThat(kontact.getAllPhones(), equalTo(mergePhones(kontactInfoFromEditForm)));
   }
+
+  public String mergePhones(KontactData kontact) {
+    return Arrays.asList(kontact.getHomePhone(), kontact.getMobilePhone(), kontact.getWorkPhone())
+            .stream().filter(s -> !s.equals(""))
+            .map(KontactPhoneTests::cleaned)
+            .collect(Collectors.joining("\n"));
+  }
+
+public static String cleaned(String phone) {
+  return phone.replaceAll("\\s", "").replaceAll("-()", "");
+}
+
 }
