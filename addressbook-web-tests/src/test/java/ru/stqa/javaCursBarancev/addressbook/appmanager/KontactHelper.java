@@ -120,6 +120,7 @@ private Kontacts kontactCache = null;
       String lastname = cells.get(1).getText();
       String address = cells.get(3).getText();
       String allPhones = cells.get(5).getText();
+      String allEmails = cells.get(4).getText();
       int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
 
       KontactData kontact = new KontactData().
@@ -127,6 +128,7 @@ private Kontacts kontactCache = null;
               withFirstname(firstname).
               withLastname(lastname).
               withAddress(address).
+              withAllEmails(allEmails).
               withAllPhones(allPhones);
 
       kontactCache.add(kontact);
@@ -143,15 +145,20 @@ private Kontacts kontactCache = null;
     String homePhone = wd.findElement(By.name("home")).getAttribute("value");
     String mobilePhone = wd.findElement(By.name("mobile")).getAttribute("value");
     String workPhone = wd.findElement(By.name("work")).getAttribute("value");
+    String email = wd.findElement(By.name("email")).getAttribute("value");
+    String email2 = wd.findElement(By.name("email2")).getAttribute("value");
+    String email3 = wd.findElement(By.name("email3")).getAttribute("value");
 
-    return new KontactData().
-            withId(kontact.getId()).
-            withFirstname(firstname).
-            withLastname(lastname).
-            withAddress(address).
-            withHomePhone(homePhone).
-            withMobile(mobilePhone).
-            withWorkPhone(workPhone);
-
+    return new KontactData()
+            .withId(kontact.getId())
+            .withFirstname(firstname)
+            .withLastname(lastname)
+            .withAddress(address)
+            .withHomePhone(homePhone)
+            .withMobile(mobilePhone)
+            .withWorkPhone(workPhone)
+            .withEmail(email)
+            .withEmail2(email2)
+            .withEmail3(email3);
   }
 }

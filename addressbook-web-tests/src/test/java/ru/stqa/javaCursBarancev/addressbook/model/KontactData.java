@@ -19,6 +19,7 @@ public class KontactData {
   private  String email;
   private  String email2;
   private  String email3;
+  private  String allEmails;
   private  String group;
   private  String address2;
   private  String notes;
@@ -104,6 +105,10 @@ public class KontactData {
     return email3;
   }
 
+  public String getAllEmails() {
+    return allEmails;
+  }
+
   public String getFirstname() {
     return firstname;
   }
@@ -185,6 +190,11 @@ public class KontactData {
 
   public KontactData withEmail3(String email3) {
     this.email3 = email3;
+    return this;
+  }
+
+  public KontactData withAllEmails(String allEmails) {
+    this.allEmails = allEmails;
     return this;
   }
 

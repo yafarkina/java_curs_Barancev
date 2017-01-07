@@ -25,26 +25,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="KontactPhoneTests.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/KontactPhoneTests.java">
+      <file leaf-file-name="KontactHelper.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/appmanager/KontactHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2120#2121#0" expanded="true" />
-                <element signature="e#2182#2183#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1853">
+              <caret line="155" column="33" lean-forward="true" selection-start-line="155" selection-start-column="33" selection-end-line="155" selection-end-column="33" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="KontactCreationTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/KontactCreationTests.java">
+      <file leaf-file-name="KontactEmailTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/KontactEmailTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="35" column="5" lean-forward="false" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-              <folding />
+            <state relative-caret-position="82">
+              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2094#2095#0" expanded="true" />
+                <element signature="e#2138#2139#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -361,9 +361,10 @@
         <option value="$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/KontactCreationTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/KontactDeletionTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/KontactModificationTests.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/appmanager/KontactHelper.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/model/KontactData.java" />
         <option value="$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/KontactPhoneTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/model/KontactData.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/KontactEmailTests.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/appmanager/KontactHelper.java" />
       </list>
     </option>
   </component>
@@ -549,40 +550,7 @@
       <recent name="ru.stqa.javaCursBarancev.addressbook.appmanager" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.KontactPhoneTests">
-    <configuration default="false" name="GroupModificationTests" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="ru.stqa.javaCursBarancev.addressbook.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="addressbook-web-tests" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="ru.stqa.javaCursBarancev.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.stqa.javaCursBarancev.addressbook.tests.GroupModificationTests" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="TestNG.KontactEmailTests">
     <configuration default="false" name="KontactCreationTests" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -596,39 +564,6 @@
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="ru.stqa.javaCursBarancev.addressbook.tests" />
       <option name="MAIN_CLASS_NAME" value="ru.stqa.javaCursBarancev.addressbook.tests.KontactCreationTests" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
-    <configuration default="false" name="KontactDeletionTests" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="ru.stqa.javaCursBarancev.addressbook.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="addressbook-web-tests" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="ru.stqa.javaCursBarancev.addressbook.tests" />
-      <option name="MAIN_CLASS_NAME" value="ru.stqa.javaCursBarancev.addressbook.tests.KontactDeletionTests" />
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
@@ -698,6 +633,72 @@
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="false" name="KontactEmailTests" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ru.stqa.javaCursBarancev.addressbook.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="addressbook-web-tests" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="ru.stqa.javaCursBarancev.addressbook.tests" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.javaCursBarancev.addressbook.tests.KontactEmailTests" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="false" name="KontactPhoneTests.testKontactPhones" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="ru.stqa.javaCursBarancev.addressbook.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="addressbook-web-tests" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="ru.stqa.javaCursBarancev.addressbook.tests" />
+      <option name="MAIN_CLASS_NAME" value="ru.stqa.javaCursBarancev.addressbook.tests.KontactPhoneTests" />
+      <option name="METHOD_NAME" value="testKontactPhones" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -929,19 +930,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="TestNG.GroupModificationTests" />
-      <item index="1" class="java.lang.String" itemvalue="TestNG.KontactCreationTests" />
-      <item index="2" class="java.lang.String" itemvalue="TestNG.KontactDeletionTests" />
-      <item index="3" class="java.lang.String" itemvalue="TestNG.KontactModificationTests" />
-      <item index="4" class="java.lang.String" itemvalue="TestNG.KontactPhoneTests" />
+      <item index="0" class="java.lang.String" itemvalue="TestNG.KontactCreationTests" />
+      <item index="1" class="java.lang.String" itemvalue="TestNG.KontactModificationTests" />
+      <item index="2" class="java.lang.String" itemvalue="TestNG.KontactPhoneTests" />
+      <item index="3" class="java.lang.String" itemvalue="TestNG.KontactEmailTests" />
+      <item index="4" class="java.lang.String" itemvalue="TestNG.KontactPhoneTests.testKontactPhones" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="TestNG.KontactPhoneTests" />
-        <item index="1" class="java.lang.String" itemvalue="TestNG.KontactCreationTests" />
-        <item index="2" class="java.lang.String" itemvalue="TestNG.KontactModificationTests" />
-        <item index="3" class="java.lang.String" itemvalue="TestNG.KontactDeletionTests" />
-        <item index="4" class="java.lang.String" itemvalue="TestNG.GroupModificationTests" />
+        <item index="0" class="java.lang.String" itemvalue="TestNG.KontactEmailTests" />
+        <item index="1" class="java.lang.String" itemvalue="TestNG.KontactPhoneTests.testKontactPhones" />
+        <item index="2" class="java.lang.String" itemvalue="TestNG.KontactPhoneTests" />
+        <item index="3" class="java.lang.String" itemvalue="TestNG.KontactCreationTests" />
+        <item index="4" class="java.lang.String" itemvalue="TestNG.KontactModificationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -959,39 +960,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GroupModificationTests - 2017.01.04 at 21h 57m 33s.xml">
-      <configuration name="GroupModificationTests" configurationId="TestNG" />
+    <history-entry file="KontactEmailTests - 2017.01.07 at 20h 15m 03s.xml">
+      <configuration name="KontactEmailTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="KontactCreationTests - 2017.01.04 at 21h 58m 07s.xml">
-      <configuration name="KontactCreationTests" configurationId="TestNG" />
+    <history-entry file="KontactEmailTests - 2017.01.07 at 20h 21m 28s.xml">
+      <configuration name="KontactEmailTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="KontactCreationTests - 2017.01.07 at 18h 31m 35s.xml">
-      <configuration name="KontactCreationTests" configurationId="TestNG" />
+    <history-entry file="KontactEmailTests - 2017.01.07 at 20h 23m 23s.xml">
+      <configuration name="KontactEmailTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="KontactCreationTests - 2017.01.07 at 19h 56m 11s.xml">
-      <configuration name="KontactCreationTests" configurationId="TestNG" />
+    <history-entry file="KontactEmailTests - 2017.01.07 at 20h 29m 50s.xml">
+      <configuration name="KontactEmailTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="KontactDeletionTests - 2017.01.04 at 21h 59m 39s.xml">
-      <configuration name="KontactDeletionTests" configurationId="TestNG" />
+    <history-entry file="KontactEmailTests - 2017.01.07 at 20h 34m 44s.xml">
+      <configuration name="KontactEmailTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="KontactDeletionTests - 2017.01.07 at 18h 32m 11s.xml">
-      <configuration name="KontactDeletionTests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="KontactModificationTests - 2017.01.04 at 22h 00m 25s.xml">
-      <configuration name="KontactModificationTests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="KontactModificationTests - 2017.01.07 at 18h 36m 09s.xml">
-      <configuration name="KontactModificationTests" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="KontactPhoneTests - 2017.01.07 at 19h 56m 48s.xml">
+    <history-entry file="KontactPhoneTests - 2017.01.07 at 19h 59m 30s.xml">
       <configuration name="KontactPhoneTests" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="KontactPhoneTests - 2017.01.07 at 19h 57m 14s.xml">
+    <history-entry file="KontactPhoneTests - 2017.01.07 at 20h 01m 14s.xml">
       <configuration name="KontactPhoneTests" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="KontactPhoneTests_testKontactPhones - 2017.01.07 at 20h 22m 57s.xml">
+      <configuration name="KontactPhoneTests.testKontactPhones" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="KontactPhoneTests_testKontactPhones - 2017.01.07 at 20h 23m 49s.xml">
+      <configuration name="KontactPhoneTests.testKontactPhones" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="KontactPhoneTests_testKontactPhones - 2017.01.07 at 20h 24m 21s.xml">
+      <configuration name="KontactPhoneTests.testKontactPhones" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="13" y="20" width="1343" height="688" extended-state="0" />
+    <frame x="13" y="20" width="1343" height="688" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1061,7 +1062,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="23" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/KontactEmailTests.java</url>
+          <line>43</line>
+          <properties />
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="25" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1070,14 +1079,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/KontactDeletionTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" column="50" lean-forward="false" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/appmanager/ApplicationManadger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -1505,34 +1506,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/model/KontactData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="213" column="16" lean-forward="true" selection-start-line="213" selection-start-column="16" selection-end-line="213" selection-end-column="16" />
-          <folding>
-            <element signature="e#2664#2665#0" expanded="true" />
-            <element signature="e#2690#2691#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/KontactDeletionTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="48" column="4" lean-forward="false" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/appmanager/KontactHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="126" column="39" lean-forward="true" selection-start-line="126" selection-start-column="39" selection-end-line="126" selection-end-column="39" />
-          <folding>
-            <element signature="e#699#700#0" expanded="true" />
-            <element signature="e#728#729#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1555,15 +1534,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/model/KontactData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="197" column="16" lean-forward="false" selection-start-line="197" selection-start-column="16" selection-end-line="197" selection-end-column="16" />
+          <folding>
+            <element signature="e#2393#2394#0" expanded="true" />
+            <element signature="e#2419#2420#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/KontactPhoneTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+        <state relative-caret-position="459">
+          <caret line="57" column="3" lean-forward="true" selection-start-line="57" selection-start-column="3" selection-end-line="57" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2120#2121#0" expanded="true" />
-            <element signature="e#2182#2183#0" expanded="true" />
+            <element signature="e#2107#2108#0" expanded="true" />
+            <element signature="e#2173#2174#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/tests/KontactEmailTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2094#2095#0" expanded="true" />
+            <element signature="e#2138#2139#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ru/stqa/javaCursBarancev/addressbook/appmanager/KontactHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1853">
+          <caret line="155" column="33" lean-forward="true" selection-start-line="155" selection-start-column="33" selection-end-line="155" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
