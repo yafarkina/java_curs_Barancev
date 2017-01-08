@@ -6,6 +6,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
@@ -23,11 +24,13 @@ public class KontactDetailsTests extends TestBase {
     app.goTo().HomePage();
     if (!app.Kontact().isThereAKontact()) {
       app.goTo().KontactPage();
+      File photo = new File("src/test/resources/листочек.png");
       app.Kontact().create(new KontactData()
               .withFirstname("first_name")
               .withMiddlename("middlename")
               .withLastname("last_name")
               .withNickname("nickname")
+              .withPhoto(photo)
               .withCompany("company")
               .withTitle("title")
               .withAddress("address")

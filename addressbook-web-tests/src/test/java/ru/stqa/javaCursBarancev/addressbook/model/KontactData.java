@@ -1,5 +1,7 @@
 package ru.stqa.javaCursBarancev.addressbook.model;
 
+import java.io.File;
+
 /**
  * Created by yafar_000 on 17.12.2016.
  */
@@ -23,6 +25,7 @@ public class KontactData {
   private  String group;
   private  String address2;
   private  String notes;
+  private File photo;
 
 
   @Override
@@ -133,6 +136,10 @@ public class KontactData {
     return allPhones;
   }
 
+  public File getPhoto() {
+    return photo;
+  }
+
   public KontactData withId(int id) {
     this.id = id;
     return this;
@@ -226,6 +233,10 @@ public class KontactData {
 
   public KontactData withAllPhones(String allPones) {
     this.allPhones = allPones;
+    return this;
+  }
+  public KontactData withPhoto(File photo) {
+    this.photo = photo;
     return this;
   }
 }

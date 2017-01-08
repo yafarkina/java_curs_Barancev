@@ -4,6 +4,8 @@ import org.testng.annotations.Test;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 import ru.stqa.javaCursBarancev.addressbook.model.Kontacts;
 
+import java.io.File;
+
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -13,7 +15,7 @@ public class KontactCreationTests extends TestBase {
   public void testKontactCreation() {
     app.goTo().HomePage();
     Kontacts befor = app.Kontact().all();
-
+    File photo = new File("src/test/resources/листочек.png");
     app.goTo().KontactPage();
     KontactData kontact = new KontactData()
             .withFirstname("first_name")
@@ -29,10 +31,11 @@ public class KontactCreationTests extends TestBase {
             .withEmail("email@mail.mail")
             .withEmail2("email2@mail.mail")
             .withEmail3("email3@mail.mail")
+            .withPhoto(photo)
             // .withGroup("test1")
             .withAddress2("address2");
 
-    app.Kontact().create(kontact, true);
+    app.Kontact().create(kontact, false);
     app.goTo().HomePage();
     assertThat(app.Kontact().getKontactCount(), equalTo(befor.size() + 1));
     Kontacts after = app.Kontact().all();

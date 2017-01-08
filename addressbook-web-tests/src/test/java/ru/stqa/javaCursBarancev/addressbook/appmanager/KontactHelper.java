@@ -43,12 +43,15 @@ public class KontactHelper extends HelperBase {
     type(By.name("email3"), kontactData.getEmail3());
     type(By.name("address2"), kontactData.getAddress2());
     type(By.name("notes"), kontactData.getNotes());
+    attach(By.name("photo"), kontactData.getPhoto());
 
- //   if(creation){
- //        new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(kontactData.getGroup());
- //   } else {
- //     Assert.assertFalse(isElementPresent(By.name("new_group")));
- //  }
+    if (creation) {
+      if (kontactData.getGroup() != null) {
+        new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(kontactData.getGroup());
+      } else {
+        Assert.assertFalse(isElementPresent(By.name("new_group")));
+      }
+    }
   }
 
   public void selectKontact(int index) {
