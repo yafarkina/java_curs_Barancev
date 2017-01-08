@@ -15,22 +15,23 @@ public class KontactCreationTests extends TestBase {
     Kontacts befor = app.Kontact().all();
 
     app.goTo().KontactPage();
-    KontactData kontact = new KontactData().
-            withFirstname("first_name").
-            withMiddlename("middlename").
-            withLastname("last_name").
-            withNickname("nickname").
-            withTitle("title").
-            withCompany("company").
-            withAddress("address").
-            withMobile("+79999999999").
-            withEmail("email@mail.mail").
-            withEmail2("email2@mail.mail").
-            withEmail3("email3@mail.mail").
-            withGroup("test1").
-            withAddress2("address2");
+    KontactData kontact = new KontactData()
+            .withFirstname("first_name").
+            //withMiddlename("middlename").
+            withLastname("last_name")
+            //withNickname("nickname").
+            //withTitle("title").
+           // withCompany("company").
+            .withAddress("address")
+            .withMobile("+79999999999")
+            .withEmail("email@mail.mail")
+            .withEmail2("email2@mail.mail")
+            .withEmail3("email3@mail.mail");
+       //     withGroup("test1").
+         //   withAddress2("address2")
+            ;
 
-    app.Kontact().create(kontact ,true);
+    app.Kontact().create(kontact ,false);
     app.goTo().HomePage();
     assertThat(app.Kontact().getKontactCount(), equalTo(befor.size() + 1));
     Kontacts after = app.Kontact().all();

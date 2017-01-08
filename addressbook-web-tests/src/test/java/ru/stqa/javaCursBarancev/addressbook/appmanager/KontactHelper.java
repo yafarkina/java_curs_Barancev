@@ -44,11 +44,11 @@ public class KontactHelper extends HelperBase {
     type(By.name("address2"), kontactData.getAddress2());
     type(By.name("notes"), kontactData.getNotes());
 
-    if(creation){
-      new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(kontactData.getGroup());
-    } else {
-      Assert.assertFalse(isElementPresent(By.name("new_group")));
-    }
+//    if(creation){
+ //     new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(kontactData.getGroup());
+//    } else {
+//      Assert.assertFalse(isElementPresent(By.name("new_group")));
+ //   }
   }
 
   public void selectKontact(int index) {
@@ -65,6 +65,15 @@ public class KontactHelper extends HelperBase {
 
   public void initKontactModificationById(int id) {
     wd.findElement(By.cssSelector("a[href='" + "edit.php?id=" + id + "']")).click();
+  }
+
+ public void initKontactDetailsById(int id) {
+    wd.findElement(By.cssSelector("a[href='" + "view.php?id=" + id + "']")).click();
+  }
+
+  public String veiwKontactDetails(){
+    String veiwKontactDetails = wd.findElement(By.id("content")).getText();
+    return veiwKontactDetails;
   }
 
   public void deleteSelectedKontact() {
@@ -95,8 +104,6 @@ public class KontactHelper extends HelperBase {
     updateSelectedKontact();
     kontactCache = null;
   }
-
-
 
   public boolean isThereAKontact() {
     return isElementPresent(By.name("selected[]"));
@@ -161,4 +168,5 @@ private Kontacts kontactCache = null;
             .withEmail2(email2)
             .withEmail3(email3);
   }
-}
+
+  }
