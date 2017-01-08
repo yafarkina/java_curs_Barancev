@@ -29,8 +29,22 @@ public class KontactDataGenerator {
   private static void save(List<KontactData> kontacts, File file) throws IOException {
     Writer writer = new FileWriter(file);
     for (KontactData kontact : kontacts) {
-     writer.write(String.format("%s;%s;%s\n", kontact.getFirstname(), kontact.getMiddlename(), kontact.getLastname()));
-     }
+      writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n",
+              kontact.getFirstname(),
+              kontact.getMiddlename(),
+              kontact.getLastname(),
+              kontact.getNickname(),
+              kontact.getCompany(),
+              kontact.getTitle(),
+              kontact.getAddress(),
+              kontact.getHomePhone(),
+              kontact.getMobilePhone(),
+              kontact.getWorkPhone(),
+              kontact.getEmail(),
+              kontact.getEmail2(),
+              kontact.getEmail3(),
+              kontact.getAddress2()));
+    }
     writer.close();
   }
 
@@ -40,7 +54,18 @@ public class KontactDataGenerator {
       kontacts.add(new KontactData()
               .withFirstname(format("first_name %s", i))
               .withMiddlename(format("middlename %s", i))
-              .withLastname(format("last_name %s", i)));
+              .withLastname(format("last_name %s", i))
+              .withNickname(format("nickname %s", i))
+              .withCompany(format("company %s", i))
+              .withTitle(format("title %s", i))
+              .withAddress(format("address %s", i))
+              .withHomePhone(format("(8-333)33-33-33 %s", i))
+              .withMobile(format("+79999999999 %s", i))
+              .withWorkPhone(format("22 22 22 %s", i))
+              .withEmail(format("email@mail.mail %s", i))
+              .withEmail2(format("email2@mail.mail %s", i))
+              .withEmail3(format("email3@mail.mail %s", i))
+              .withAddress2(format("address2 %s", i)));
     }
     return kontacts;
   }
