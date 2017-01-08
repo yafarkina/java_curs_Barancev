@@ -1,5 +1,8 @@
 package ru.stqa.javaCursBarancev.addressbook.generators;
 
+import com.beust.jcommander.JCommander;
+import com.beust.jcommander.Parameter;
+import com.beust.jcommander.ParameterException;
 import ru.stqa.javaCursBarancev.addressbook.model.GroupData;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 
@@ -18,12 +21,27 @@ import static org.apache.tools.ant.types.resources.MultiRootFileSet.SetType.file
  */
 public class KontactDataGenerator {
 
-  public static void main(String[] args) throws IOException {
-    int count = Integer.parseInt(args[0]);
-    File file = new File(args[1]);
+  @Parameter(names = "-c", description = "Kontact count")
+  public int count;
 
+  @Parameter(names = "-f", description = "Target file")
+  public String file;
+
+  public static void main(String[] args) throws IOException {
+    KontactDataGenerator generator = new KontactDataGenerator();
+    JCommander jCommander = new JCommander(generator);
+    try {
+      jCommander.parse(args);
+    } catch (ParameterException ex) {
+      jCommander.usage();
+      return;
+    }
+    generator.run();
+   }
+
+  private void run() throws IOException {
     List<KontactData> kontacts = generateKontacts(count);
-    save(kontacts, file);
+    save(kontacts, new File(file));
   }
 
   private static void save(List<KontactData> kontacts, File file) throws IOException {
