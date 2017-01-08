@@ -23,22 +23,23 @@ public class KontactDetailsTests extends TestBase {
     app.goTo().HomePage();
     if (!app.Kontact().isThereAKontact()) {
       app.goTo().KontactPage();
-      app.Kontact().create(new KontactData().
-                      withFirstname("first_name").
-                     withMiddlename("middlename").
-                      withLastname("last_name").
-                      withNickname("nickname").
-                      withTitle("title").
-                      withCompany("company").
-                      withAddress("address").
-                      withHomePhone("22-22-22-22").
-                      withMobile("+79999999999").
-                      withWorkPhone("33 33 33 33").
-                      withEmail("email@mail.mail").
-                      withEmail2("email2@mail.mail").
-                      withEmail3("email3@mail.mail").
-                     withGroup("test1").withAddress2("address2")
-              , true);
+      app.Kontact().create(new KontactData()
+              .withFirstname("first_name")
+              .withMiddlename("middlename")
+              .withLastname("last_name")
+              .withNickname("nickname")
+              .withCompany("company")
+              .withTitle("title")
+              .withAddress("address")
+              .withHomePhone("(8-333)33-33-33")
+              .withMobile("+79999999999")
+              .withWorkPhone("22 22 22")
+              .withEmail("email@mail.mail")
+              .withEmail2("email2@mail.mail")
+              .withEmail3("email3@mail.mail")
+                    // withGroup("test1").
+                      .withAddress2("address2")
+              , false);
       app.goTo().HomePage();
     }
   }
