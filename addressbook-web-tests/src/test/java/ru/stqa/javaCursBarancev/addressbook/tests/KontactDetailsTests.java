@@ -59,20 +59,25 @@ public class KontactDetailsTests extends TestBase {
  public String mergeKontactDataEditForm (KontactData kontact) {
     return Arrays
            .asList(kontact.getFirstname(),
+                   kontact.getMiddlename(),
                    kontact.getLastname(),
+                   kontact.getNickname(),
+                   kontact.getTitle(),
+                   kontact.getCompany(),
                    kontact.getAddress(),
                    kontact.getHomePhone(),
                    kontact.getMobilePhone(),
                    kontact.getWorkPhone(),
                    kontact.getEmail(),
                    kontact.getEmail2(),
-                   kontact.getEmail3())
+                   kontact.getEmail3(),
+                   kontact.getAddress2())
            .stream().filter(s -> !s.equals(""))
            .collect(Collectors.joining(" "));
  }
 
   public static String mergeKontactDataDetailsForm(String veiwKontactDetails) {
-    return veiwKontactDetails.replaceAll("[HMW:]", " ").replaceAll("\n", " ");
+    return veiwKontactDetails.replaceAll("[HMW:]", "").replaceAll("\n\n", "\n").replaceAll("\n", " ").replaceAll("  ", " ");
   }
 
 }
