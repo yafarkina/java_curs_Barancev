@@ -1,11 +1,18 @@
 package ru.stqa.javaCursBarancev.addressbook.model;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamOmitField;
+
 import java.io.File;
 
 /**
  * Created by yafar_000 on 17.12.2016.
  */
+
+@XStreamAlias("kontact")
+
 public class KontactData {
+  @XStreamOmitField
   private int id = 0;
   private  String firstname;
   private  String middlename;
@@ -25,6 +32,7 @@ public class KontactData {
   private  String group;
   private  String address2;
   private  String notes;
+  @XStreamOmitField
   private File photo;
 
 
