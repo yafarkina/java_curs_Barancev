@@ -61,40 +61,40 @@ public class KontactDataGenerator {
   private void saveAsJson(List<KontactData> kontacts, File file) throws IOException {
     Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
     String json = gson.toJson(kontacts);
-    Writer writer = new FileWriter(file);
-    writer.write(json);
-    writer.close();
+    try (Writer writer = new FileWriter(file)){
+      writer.write(json);
+    }
   }
 
   private void saveAsXml(List<KontactData> kontacts, File file) throws IOException {
     XStream xstream = new XStream();
     xstream.processAnnotations(GroupData.class);
     String xml = xstream.toXML(kontacts);
-    Writer writer = new FileWriter(file);
-    writer.write(xml);
-    writer.close();
+    try(Writer writer = new FileWriter(file)) {
+      writer.write(xml);
+    }
   }
 
   private static void saveAsCsv(List<KontactData> kontacts, File file) throws IOException {
-    Writer writer = new FileWriter(file);
-    for (KontactData kontact : kontacts) {
-      writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n",
-              kontact.getFirstname(),
-              kontact.getMiddlename(),
-              kontact.getLastname(),
-              kontact.getNickname(),
-              kontact.getCompany(),
-              kontact.getTitle(),
-              kontact.getAddress(),
-              kontact.getHomePhone(),
-              kontact.getMobilePhone(),
-              kontact.getWorkPhone(),
-              kontact.getEmail(),
-              kontact.getEmail2(),
-              kontact.getEmail3(),
-              kontact.getAddress2()));
+    try (Writer writer = new FileWriter(file)){
+      for (KontactData kontact : kontacts) {
+        writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n",
+                kontact.getFirstname(),
+                kontact.getMiddlename(),
+                kontact.getLastname(),
+                kontact.getNickname(),
+                kontact.getCompany(),
+                kontact.getTitle(),
+                kontact.getAddress(),
+                kontact.getHomePhone(),
+                kontact.getMobilePhone(),
+                kontact.getWorkPhone(),
+                kontact.getEmail(),
+                kontact.getEmail2(),
+                kontact.getEmail3(),
+                kontact.getAddress2()));
+      }
     }
-    writer.close();
   }
 
   private static List<KontactData> generateKontacts(int count) {
