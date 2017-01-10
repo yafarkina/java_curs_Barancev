@@ -1,5 +1,7 @@
 package ru.stqa.javaCursBarancev.addressbook.tests;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.thoughtworks.xstream.XStream;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -17,7 +19,20 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class KontactCreationTests extends TestBase {
 
   @DataProvider
-  public Iterator<Object[]> validKontacts() throws IOException {
+  public Iterator<Object[]> validGroupsFromJson() throws IOException {
+    BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/kontacts.json")));
+    String json = "";
+    String line = reader.readLine();
+    while (line != null) {
+      json += line;
+      line = reader.readLine();
+    }
+    Gson gson = new Gson();
+    List<KontactData> groups = gson.fromJson(json, new TypeToken<List<KontactData>>(){}.getType());
+    return groups.stream().map((g)-> new Object[]{g}).collect(Collectors.toList()).iterator();
+  }
+  @DataProvider
+  public Iterator<Object[]> validKontactsFromXml() throws IOException {
    // File photo = new File("src/test/resources/листочек.png");
     BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/kontacts.xml")));
     String xml = "";
@@ -32,7 +47,7 @@ public class KontactCreationTests extends TestBase {
     return kontacts.stream().map((g)-> new Object[]{g}).collect(Collectors.toList()).iterator();
   }
 
-  @Test(dataProvider = "validKontacts")
+  @Test(dataProvider = "validGroupsFromJson")
   public void testKontactCreation(KontactData kontact) {
     app.goTo().HomePage();
     Kontacts befor = app.Kontact().all();
