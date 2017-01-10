@@ -3,6 +3,9 @@ package ru.stqa.javaCursBarancev.addressbook.generators;
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
 import com.beust.jcommander.ParameterException;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.thoughtworks.xstream.XStream;
 import ru.stqa.javaCursBarancev.addressbook.model.GroupData;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 
@@ -44,10 +47,35 @@ public class KontactDataGenerator {
 
   private void run() throws IOException {
     List<KontactData> kontacts = generateKontacts(count);
-    save(kontacts, new File(file));
+    if (format.equals("csv")){
+      saveAsCsv(kontacts, new File(file));
+    } else if (format.equals("xml")){
+      saveAsXml(kontacts, new File(file));
+    } else if (format.equals("json")){
+      saveAsJson(kontacts, new File(file));
+    } else {
+      System.out.println("Unrecognized format" + format);
+    }
   }
 
-  private static void save(List<KontactData> kontacts, File file) throws IOException {
+  private void saveAsJson(List<KontactData> kontacts, File file) throws IOException {
+    Gson gson = new GsonBuilder().setPrettyPrinting().excludeFieldsWithoutExposeAnnotation().create();
+    String json = gson.toJson(kontacts);
+    Writer writer = new FileWriter(file);
+    writer.write(json);
+    writer.close();
+  }
+
+  private void saveAsXml(List<KontactData> kontacts, File file) throws IOException {
+    XStream xstream = new XStream();
+    xstream.processAnnotations(GroupData.class);
+    String xml = xstream.toXML(kontacts);
+    Writer writer = new FileWriter(file);
+    writer.write(xml);
+    writer.close();
+  }
+
+  private static void saveAsCsv(List<KontactData> kontacts, File file) throws IOException {
     Writer writer = new FileWriter(file);
     for (KontactData kontact : kontacts) {
       writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n",
