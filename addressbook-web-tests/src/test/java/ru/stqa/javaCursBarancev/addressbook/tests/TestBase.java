@@ -10,11 +10,8 @@ import ru.stqa.javaCursBarancev.addressbook.appmanager.ApplicationManadger;
  */
 public class TestBase {
 
-  protected static final ApplicationManadger app = new ApplicationManadger(BrowserType.FIREFOX);;
-
-  //public TestBase() {
-  //  app = new ApplicationManadger(BrowserType.FIREFOX);
-  //}
+  protected static final ApplicationManadger app
+          = new ApplicationManadger(System.getProperty("browser", BrowserType.FIREFOX));
 
   @BeforeSuite
   public void setUp() throws Exception {

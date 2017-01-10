@@ -1,3 +1,5 @@
+import com.sun.javafx.runtime.SystemProperties
+
 apply plugin: 'java'
 
 repositories {
@@ -17,10 +19,25 @@ task testGroups(type: Test) {
     useTestNG {
         suites 'src/test/resources/testng-groups.xml'
     }
+    if (project.hasProperty('browser')) {
+        systemProperties 'browser', "${browser}"
+    }
+
+    if (project.hasProperty('target')) {
+        systemProperties 'target', "${target}"
+    }
 }
 
 task testKontacts(type: Test) {
     useTestNG {
         suites 'src/test/resources/testng-kontacts.xml'
+    }
+
+    if (project.hasProperty('browser')) {
+        systemProperties 'browser', "${browser}"
+    }
+
+    if (project.hasProperty('target')) {
+        systemProperties 'target', "${target}"
     }
 }
