@@ -2,7 +2,9 @@ package ru.stqa.javaCursBarancev.addressbook.model;
 
 import com.google.common.collect.ForwardingSet;
 
+import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -18,6 +20,10 @@ private Set<KontactData> delegate;
 
   public Kontacts() {
     this.delegate = new HashSet<KontactData>();
+  }
+
+  public Kontacts(Collection<KontactData> kontacts) {
+    this.delegate = new HashSet<KontactData>(kontacts);
   }
 
 

@@ -15,25 +15,30 @@ public class GroupModificationTests extends TestBase {
 
   @BeforeMethod
   public void insurePreconditions() {
-    app.goTo().GroupPage();
-    if (!app.Group().isThereAGroup()) {
+    if (app.db().groups().size() == 0){
+      app.goTo().GroupPage();
       app.Group().create(new GroupData().withName("test1"));
     }
-  }
+
+   // if (!app.Group().isThereAGroup()) {
+
+    }
+
 
   @Test
   public void testGroupModification() {
 
-    Groups befor = app.Group().all();
+    Groups befor = app.db().groups();
     GroupData modifiedGroup = befor.iterator().next();
     GroupData group = new GroupData().
             withId(modifiedGroup.getId()).
             withName("test1").
             withHeader("test2").
             withFooter("test3");
+    app.goTo().GroupPage();
     app.Group().modify(group);
     assertThat(app.Group().getGroupCount(), equalTo(befor.size()));
-    Groups after = app.Group().all();
+    Groups after = app.db().groups();
     assertThat(after, equalTo(befor.withOut(modifiedGroup).withAdded(group)));
   }
 }
