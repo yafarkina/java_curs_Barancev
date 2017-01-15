@@ -43,7 +43,7 @@ public class KontactHelper extends HelperBase {
     type(By.name("email3"), kontactData.getEmail3());
     type(By.name("address2"), kontactData.getAddress2());
     type(By.name("notes"), kontactData.getNotes());
-    attach(By.name("photo"), kontactData.getPhoto());
+   // attach(By.name("photo"), kontactData.getPhoto());
 
     if (creation) {
       if (kontactData.getGroup() != null) {
@@ -163,6 +163,7 @@ public class KontactHelper extends HelperBase {
     String email2 = wd.findElement(By.name("email2")).getAttribute("value");
     String email3 = wd.findElement(By.name("email3")).getAttribute("value");
     String address2 = wd.findElement(By.name("address2")).getAttribute("value");
+    String notes = wd.findElement(By.name("notes")).getAttribute("value");
 
     return new KontactData()
             .withId(kontact.getId())
@@ -179,7 +180,8 @@ public class KontactHelper extends HelperBase {
             .withEmail(email)
             .withEmail2(email2)
             .withEmail3(email3)
-            .withAddress2(address2);
+            .withAddress2(address2)
+            .withNotes(notes);
   }
 
 }

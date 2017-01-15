@@ -1,20 +1,19 @@
 [
-
   {
-    "firstname": "first_name 4",
-    "middlename": "middlename 4",
-    "lastname": "last_name 4",
-    "nickname": "nickname 4",
-    "title": "title 4",
-    "company": "company 4",
-    "address": "address 4",
-    "homePhone": "(8-333)33-33-33 4",
-    "mobile": "+79999999999 4",
-    "workPhone": "22 22 22 4",
-    "email": "email@mail.mail 4",
-    "email2": "email2@mail.mail 4",
-    "email3": "email3@mail.mail 4",
-    "address2": "address2 4"
-
+    "firstname": "first_name 0",
+    "middlename": "middlename 0",
+    "lastname": "last_name 0",
+    "nickname": "nickname 0",
+    "title": "title 0",
+    "company": "company 0",
+    "address": "address 0",
+    "homePhone": "(8-333)33-33-33 0",
+    "mobile": "+79999999999 0",
+    "workPhone": "22 22 22 0",
+    "email": "email@mail.mail 0",
+    "email2": "email2@mail.mail 0",
+    "email3": "email3@mail.mail 0",
+    "address2": "address2 0",
+    "notes": ""
   }
-]
+    ]

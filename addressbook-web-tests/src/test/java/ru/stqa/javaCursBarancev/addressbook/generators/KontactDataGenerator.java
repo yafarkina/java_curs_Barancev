@@ -92,7 +92,8 @@ public class KontactDataGenerator {
                 kontact.getEmail(),
                 kontact.getEmail2(),
                 kontact.getEmail3(),
-                kontact.getAddress2()));
+                kontact.getAddress2()
+                ));
       }
     }
   }
