@@ -14,6 +14,7 @@
     "email2": "email2@mail.mail 0",
     "email3": "email3@mail.mail 0",
     "address2": "address2 0",
-    "notes": ""
+    "notes": "",
+    "photo": "src/test/resources/листочек.png"
   }
     ]

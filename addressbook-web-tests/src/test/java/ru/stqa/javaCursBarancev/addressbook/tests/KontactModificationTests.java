@@ -51,7 +51,9 @@ public class KontactModificationTests extends TestBase {
             withTitle("title").
             withCompany("company").
             withAddress("address").
-            withMobile("+79999999999").
+            withHomePhone("33 33 33").
+            withMobile("+71111199999").
+            withWorkPhone("3344-222-222").
             withEmail("email@mail.mail").
             withEmail2("email2@mail.mail").
             withEmail3("email3@mail.mail").
