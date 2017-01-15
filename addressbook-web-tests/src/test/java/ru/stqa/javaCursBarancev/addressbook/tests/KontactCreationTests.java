@@ -20,6 +20,7 @@ public class KontactCreationTests extends TestBase {
 
   @DataProvider
   public Iterator<Object[]> validGroupsFromJson() throws IOException {
+    File photo = new File("src/test/resources/листочек.png");
     try (BufferedReader reader = new BufferedReader(new FileReader(new File("src/test/resources/kontacts.json")))) {
       String json = "";
       String line = reader.readLine();
@@ -55,12 +56,12 @@ public class KontactCreationTests extends TestBase {
   @Test(dataProvider = "validGroupsFromJson")
   public void testKontactCreation(KontactData kontact) {
     app.goTo().HomePage();
-    Kontacts befor = app.Kontact().all();
+    Kontacts befor = app.db().kontacts();
     app.goTo().KontactPage();
     app.Kontact().create(kontact, false);
     app.goTo().HomePage();
     assertThat(app.Kontact().getKontactCount(), equalTo(befor.size() + 1));
-    Kontacts after = app.Kontact().all();
+    Kontacts after = app.db().kontacts();
     assertThat(after, equalTo
             (befor.withAdded(kontact.withId(after.stream().mapToInt(k -> k.getId()).max().getAsInt()))));
   }

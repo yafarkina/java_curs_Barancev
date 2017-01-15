@@ -16,7 +16,7 @@ public class KontactModificationTests extends TestBase {
   @BeforeMethod
   public void insurePreconditions() {
     app.goTo().HomePage();
-    if (!app.Kontact().isThereAKontact()) {
+    if (app.db().kontacts().size() == 0) {
       app.goTo().KontactPage();
       app.Kontact().create(new KontactData().
                       withFirstname("first_name").
@@ -39,7 +39,7 @@ public class KontactModificationTests extends TestBase {
   @Test
 
   public void testKontactModification() {
-    Kontacts befor = app.Kontact().all();
+    Kontacts befor = app.db().kontacts();
     KontactData modifiedKontact = befor.iterator().next();
     int index = befor.size()-1;
     KontactData kontact = new KontactData().
@@ -61,7 +61,7 @@ public class KontactModificationTests extends TestBase {
     app.Kontact().modify(kontact);
     app.goTo().HomePage();
     assertThat(app.Kontact().getKontactCount(), equalTo(befor.size()));
-    Kontacts after = app.Kontact().all();
+    Kontacts after = app.db().kontacts();
     assertThat(after, equalTo(befor.withOut(modifiedKontact).withAdded(kontact)));
   }
 }

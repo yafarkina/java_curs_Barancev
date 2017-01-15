@@ -17,7 +17,7 @@ public class KontactDeletionTests extends TestBase {
 
   public void insurePreconditions() {
     app.goTo().HomePage();
-    if (!app.Kontact().isThereAKontact()) {
+    if (app.db().kontacts().size() == 0) {
       app.goTo().KontactPage();
       app.Kontact().create(new KontactData().
                       withFirstname("first_name").
@@ -40,12 +40,12 @@ public class KontactDeletionTests extends TestBase {
   @Test
 
   public void testKontactDeletion() {
-    Kontacts befor = app.Kontact().all();
+    Kontacts befor = app.db().kontacts();
     KontactData deletedKontact = befor.iterator().next();
     app.Kontact().delete(deletedKontact);
     app.goTo().HomePage();
     assertThat(app.Kontact().getKontactCount(), equalTo(befor.size() - 1));
-    Kontacts after = app.Kontact().all();
+    Kontacts after = app.db().kontacts();
     assertThat(after, equalTo(befor.withOut(deletedKontact)));
   }
 }
