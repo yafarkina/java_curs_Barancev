@@ -65,5 +65,6 @@ public class KontactModificationTests extends TestBase {
     assertThat(app.Kontact().getKontactCount(), equalTo(befor.size()));
     Kontacts after = app.db().kontacts();
     assertThat(after, equalTo(befor.withOut(modifiedKontact).withAdded(kontact)));
+    verifyKontactListUI();
   }
 }

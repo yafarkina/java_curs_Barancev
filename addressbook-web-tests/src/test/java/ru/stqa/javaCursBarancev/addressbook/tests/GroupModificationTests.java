@@ -19,9 +19,6 @@ public class GroupModificationTests extends TestBase {
       app.goTo().GroupPage();
       app.Group().create(new GroupData().withName("test1"));
     }
-
-   // if (!app.Group().isThereAGroup()) {
-
     }
 
 
@@ -40,5 +37,6 @@ public class GroupModificationTests extends TestBase {
     assertThat(app.Group().getGroupCount(), equalTo(befor.size()));
     Groups after = app.db().groups();
     assertThat(after, equalTo(befor.withOut(modifiedGroup).withAdded(group)));
+    verifyGroupListUI();
   }
 }

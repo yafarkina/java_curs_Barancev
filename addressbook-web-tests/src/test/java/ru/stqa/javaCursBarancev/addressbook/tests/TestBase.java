@@ -8,9 +8,17 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import ru.stqa.javaCursBarancev.addressbook.appmanager.ApplicationManadger;
+import ru.stqa.javaCursBarancev.addressbook.model.GroupData;
+import ru.stqa.javaCursBarancev.addressbook.model.Groups;
+import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
+import ru.stqa.javaCursBarancev.addressbook.model.Kontacts;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
+import java.util.stream.Collectors;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
  * Created by yafar_000 on 14.12.2016.
@@ -43,7 +51,29 @@ public class TestBase {
     app.stop();
   }
 
+  public void verifyGroupListUI() {
+    if (Boolean.getBoolean("verifyUI")) {
+      Groups dbGroups = app.db().groups();
+      Groups uiGroups = app.Group().all();
+      assertThat(uiGroups, equalTo(dbGroups.stream()
+              .map((g)-> new GroupData().withId(g.getId()).withName(g.getName()))
+              .collect(Collectors.toSet())));
+    }
+  }
 
+  public void verifyKontactListUI() {
+    if (Boolean.getBoolean("verifyUI")) {
+      Kontacts dbKontacts = app.db().kontacts();
+      Kontacts uiKontacts = app.Kontact().all();
+      assertThat(uiKontacts, equalTo(dbKontacts.stream()
+              .map((k)-> new KontactData()
+                      .withId(k.getId())
+                      .withFirstname(k.getFirstname())
+                      .withLastname(k.getLastname())
+                      .withAddress(k.getAddress()))
+              .collect(Collectors.toSet())));
+    }
+  }
 }
 
 
