@@ -54,6 +54,33 @@ public class KontactHelper extends HelperBase {
     }
   }
 
+  public void fillModifyKontactForm(KontactData kontactData, boolean creation) {
+    type(By.name("firstname"), kontactData.getFirstname());
+    type(By.name("middlename"), kontactData.getMiddlename());
+    type(By.name("lastname"), kontactData.getLastname());
+    type(By.name("nickname"), kontactData.getNickname());
+    type(By.name("title"), kontactData.getTitle());
+    type(By.name("company"), kontactData.getCompany());
+    type(By.name("address"), kontactData.getAddress());
+    type(By.name("home"), kontactData.getHomePhone());
+    type(By.name("mobile"), kontactData.getMobilePhone());
+    type(By.name("work"), kontactData.getWorkPhone());
+    type(By.name("email"), kontactData.getEmail());
+    type(By.name("email2"), kontactData.getEmail2());
+    type(By.name("email3"), kontactData.getEmail3());
+    type(By.name("address2"), kontactData.getAddress2());
+    type(By.name("notes"), kontactData.getNotes());
+
+
+    if (creation) {
+      if (kontactData.getGroup() != null) {
+        new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(kontactData.getGroup());
+      } else {
+        Assert.assertFalse(isElementPresent(By.name("new_group")));
+      }
+    }
+  }
+
   public void selectKontact(int index) {
     wd.findElements(By.name("selected[]")).get(index).click();
   }
@@ -103,7 +130,8 @@ public class KontactHelper extends HelperBase {
   public void modify(KontactData kontact) {
     selectKontactById(kontact.getId());
     initKontactModificationById(kontact.getId());
-    fillKontactForm(kontact, false);
+    //fillKontactForm(kontact, false);
+   fillModifyKontactForm(kontact,false);
     updateSelectedKontact();
     kontactCache = null;
   }
