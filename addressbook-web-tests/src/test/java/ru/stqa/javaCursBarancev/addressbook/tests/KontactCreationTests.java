@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import com.thoughtworks.xstream.XStream;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import ru.stqa.javaCursBarancev.addressbook.model.Groups;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 import ru.stqa.javaCursBarancev.addressbook.model.Kontacts;
 
@@ -29,9 +30,9 @@ public class KontactCreationTests extends TestBase {
         line = reader.readLine();
       }
       Gson gson = new Gson();
-      List<KontactData> groups = gson.fromJson(json, new TypeToken<List<KontactData>>() {
+      List<KontactData> kontacts = gson.fromJson(json, new TypeToken<List<KontactData>>() {
       }.getType());
-      return groups.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
+      return kontacts.stream().map((k) -> new Object[]{k}).collect(Collectors.toList()).iterator();
     }
   }
 
@@ -49,7 +50,7 @@ public class KontactCreationTests extends TestBase {
       XStream xStream = new XStream();
       xStream.processAnnotations(KontactData.class);
       List<KontactData> kontacts = (List<KontactData>) xStream.fromXML(xml);
-      return kontacts.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
+      return kontacts.stream().map((k) -> new Object[]{k}).collect(Collectors.toList()).iterator();
     }
   }
 
@@ -58,11 +59,40 @@ public class KontactCreationTests extends TestBase {
     app.goTo().HomePage();
     Kontacts befor = app.db().kontacts();
     app.goTo().KontactPage();
-    app.Kontact().create(kontact, false);
+    app.Kontact().create(kontact, false); //данные берутся из файла
     app.goTo().HomePage();
     assertThat(app.Kontact().getKontactCount(), equalTo(befor.size() + 1));
     Kontacts after = app.db().kontacts();
     assertThat(after, equalTo
             (befor.withAdded(kontact.withId(after.stream().mapToInt(k -> k.getId()).max().getAsInt()))));
+  }
+
+  @Test
+  public void testKontactCreationWithGroup(KontactData kontact) {
+    app.goTo().HomePage();
+    Groups groups = app.db().groups();
+    Kontacts befor = app.db().kontacts();
+    app.goTo().KontactPage();
+    File photo = new File("src/test/resources/листочек.png");
+    KontactData  newKontact = new KontactData().
+            withFirstname("first_name").
+            withMiddlename("middlename").
+            withLastname("last_name").
+            withNickname("nickname").
+            withTitle("title").
+            withCompany("company").
+            withAddress("address").
+            withMobile("+79999999999").
+            withEmail("email@mail.mail").
+            withEmail2("email2@mail.mail").
+            withEmail3("email3@mail.mail").withPhoto(photo).
+            inGroup(groups.iterator().next());
+
+    app.Kontact().create(newKontact, true);
+    app.goTo().HomePage();
+    assertThat(app.Kontact().getKontactCount(), equalTo(befor.size() + 1));
+    Kontacts after = app.db().kontacts();
+    assertThat(after, equalTo
+            (befor.withAdded(newKontact.withId(after.stream().mapToInt(k -> k.getId()).max().getAsInt()))));
   }
 }

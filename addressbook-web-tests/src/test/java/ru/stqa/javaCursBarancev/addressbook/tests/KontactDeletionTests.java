@@ -31,7 +31,8 @@ public class KontactDeletionTests extends TestBase {
                       withEmail("email@mail.mail").
                       withEmail2("email2@mail.mail").
                       withEmail3("email3@mail.mail").
-                      withGroup("test1").withAddress2("address2"),
+//                      withGroup("test1").
+                      withAddress2("address2"),
                             true);
       app.goTo().HomePage();
     }

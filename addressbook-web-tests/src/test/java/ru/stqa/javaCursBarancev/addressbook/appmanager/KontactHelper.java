@@ -45,14 +45,15 @@ public class KontactHelper extends HelperBase {
     type(By.name("notes"), kontactData.getNotes());
     attach(By.name("photo"), kontactData.getPhoto());
 
-    if (creation) {
-      if (kontactData.getGroup() != null) {
-        new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(kontactData.getGroup());
+   if (creation) {
+     if (kontactData.getGroups().size() >0) {
+       Assert.assertTrue(kontactData.getGroups().size() == 1);
+       new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(kontactData.getGroups().iterator().next().getName());
+     }
       } else {
         Assert.assertFalse(isElementPresent(By.name("new_group")));
       }
     }
-  }
 
   public void fillModifyKontactForm(KontactData kontactData, boolean creation) {
     type(By.name("firstname"), kontactData.getFirstname());
@@ -73,13 +74,14 @@ public class KontactHelper extends HelperBase {
 
 
     if (creation) {
-      if (kontactData.getGroup() != null) {
-        new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(kontactData.getGroup());
+      if (kontactData.getGroups().size() >0) {
+        Assert.assertTrue(kontactData.getGroups().size() == 1);
+        new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(kontactData.getGroups().iterator().next().getName());
+      }
       } else {
         Assert.assertFalse(isElementPresent(By.name("new_group")));
       }
-    }
-  }
+   }
 
   public void selectKontact(int index) {
     wd.findElements(By.name("selected[]")).get(index).click();

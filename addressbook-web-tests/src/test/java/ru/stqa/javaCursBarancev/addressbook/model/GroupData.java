@@ -7,6 +7,9 @@ import org.hibernate.annotations.Type;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import java.util.HashSet;
+import java.util.Set;
 
 @XStreamAlias("group")
 @javax.persistence.Entity
@@ -31,6 +34,11 @@ public class GroupData {
   @Column(name = "group_footer")
   @Type(type = "text")
   private  String footer;
+
+  @ManyToMany (mappedBy = "groups")
+  private Set<KontactData> kontacts = new HashSet<KontactData>();
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -76,6 +84,10 @@ public class GroupData {
 
   public int getId() {
     return id;
+  }
+
+  public Kontacts getContacts() {
+    return new Kontacts(kontacts);
   }
 
   public GroupData withId(int id) {

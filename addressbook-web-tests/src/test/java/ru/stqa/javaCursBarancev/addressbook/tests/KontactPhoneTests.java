@@ -33,8 +33,8 @@ public class KontactPhoneTests extends TestBase {
                       withWorkPhone("33 33 33 33").
                       withEmail("email@mail.mail").
                       withEmail2("email2@mail.mail").
-                      withEmail3("email3@mail.mail").
-                      withGroup("test1").withAddress2("address2")
+                      withEmail3("email3@mail.mail")
+  //                    withGroup("test1").withAddress2("address2")
               , true);
       app.goTo().HomePage();
     }

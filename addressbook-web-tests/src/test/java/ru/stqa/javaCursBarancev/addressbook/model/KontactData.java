@@ -5,10 +5,10 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 import org.hibernate.annotations.Type;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import java.io.File;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by yafar_000 on 17.12.2016.
@@ -92,10 +92,6 @@ public class KontactData {
   private  String allEmails;
 
   @Expose
-  @Transient
-  private  String group;
-
-  @Expose
   @Column(name = "address2")
   @Type(type = "text")
   private  String address2;
@@ -110,6 +106,11 @@ public class KontactData {
   @Column(name = "photo")
   @Type(type = "text")
   private String photo;
+
+  @ManyToMany (fetch = FetchType.EAGER)
+  @JoinTable(name= "address_in_groups",
+          joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "group_id"))
+  private Set<GroupData> groups = new HashSet<GroupData>();
 
   @Override
   public boolean equals(Object o) {
@@ -179,12 +180,12 @@ public class KontactData {
             '}';
   }
 
-  public int getId() {
-    return id;
+  public Groups getGroups() {
+    return new Groups(groups);
   }
 
-  public String getGroup() {
-   return group;
+  public int getId() {
+    return id;
   }
 
   public String getAddress() {
@@ -324,12 +325,7 @@ public class KontactData {
     return this;
   }
 
-  public KontactData withGroup(String group) {
-    this.group = group;
-    return this;
-  }
-
-  public KontactData withAddress2(String address2) {
+ public KontactData withAddress2(String address2) {
     this.address2 = address2;
     return this;
   }
@@ -356,6 +352,11 @@ public class KontactData {
   }
   public KontactData withPhoto(File photo) {
     this.photo = photo.getPath();
+    return this;
+  }
+
+  public KontactData inGroup(GroupData group) {
+    groups.add(group);
     return this;
   }
 }

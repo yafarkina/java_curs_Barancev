@@ -29,8 +29,8 @@ public class KontactModificationTests extends TestBase {
                       withMobile("+79999999999").
                       withEmail("email@mail.mail").
                       withEmail2("email2@mail.mail").
-                      withEmail3("email3@mail.mail").
-                      withGroup("test1").withAddress2("address2")
+                      withEmail3("email3@mail.mail")
+  //                    withGroup("test1").withAddress2("address2")
               , true);
       app.goTo().HomePage();
     }
