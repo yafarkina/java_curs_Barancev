@@ -68,24 +68,29 @@ public class KontactCreationTests extends TestBase {
   }
 
   @Test
-  public void testKontactCreationWithGroup(KontactData kontact) {
+  public void testKontactCreationWithGroup() {
     app.goTo().HomePage();
     Groups groups = app.db().groups();
     Kontacts befor = app.db().kontacts();
     app.goTo().KontactPage();
     File photo = new File("src/test/resources/листочек.png");
     KontactData  newKontact = new KontactData().
-            withFirstname("first_name").
+            withFirstname("firstname2").
             withMiddlename("middlename").
-            withLastname("last_name").
+            withLastname("lastname").
             withNickname("nickname").
             withTitle("title").
             withCompany("company").
             withAddress("address").
-            withMobile("+79999999999").
+            withHomePhone("33 33 33").
+            withMobile("+71111199999").
+            withWorkPhone("3344-222-222").
             withEmail("email@mail.mail").
             withEmail2("email2@mail.mail").
-            withEmail3("email3@mail.mail").withPhoto(photo).
+            withEmail3("email3@mail.mail").
+            withAddress2("address2").
+            withNotes("notes").
+            withPhoto(photo).
             inGroup(groups.iterator().next());
 
     app.Kontact().create(newKontact, true);
