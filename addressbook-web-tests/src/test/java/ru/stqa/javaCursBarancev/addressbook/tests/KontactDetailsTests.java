@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import ru.stqa.javaCursBarancev.addressbook.model.Groups;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 
 import java.io.File;
@@ -23,26 +24,27 @@ public class KontactDetailsTests extends TestBase {
   public void insurePreconditions() {
     app.goTo().HomePage();
     if (!app.Kontact().isThereAKontact()) {
+      Groups groups = app.db().groups();
       app.goTo().KontactPage();
       File photo = new File("src/test/resources/листочек.png");
-      app.Kontact().create(new KontactData()
-              .withFirstname("first_name")
-              .withMiddlename("middlename")
-              .withLastname("last_name")
-              .withNickname("nickname")
-              .withPhoto(photo)
-              .withCompany("company")
-              .withTitle("title")
-              .withAddress("address")
-              .withHomePhone("(8-333)33-33-33")
-              .withMobile("+79999999999")
-              .withWorkPhone("22 22 22")
-              .withEmail("email@mail.mail")
-              .withEmail2("email2@mail.mail")
-              .withEmail3("email3@mail.mail")
-                    // withGroup("test1").
-                      .withAddress2("address2")
-              , false);
+      app.Kontact().create(new KontactData().
+              withFirstname("firstname2").
+                      withMiddlename("middlename").
+                      withLastname("lastname").
+                      withNickname("nickname").
+                      withTitle("title").
+                      withCompany("company").
+                      withAddress("address").
+                      withHomePhone("33 33 33").
+                      withMobile("+71111199999").
+                      withWorkPhone("3344-222-222").
+                      withEmail("email@mail.mail").
+                      withEmail2("email2@mail.mail").
+                      withEmail3("email3@mail.mail").
+                      withAddress2("address2").
+                      withNotes("notes").
+                      withPhoto(photo).
+                      inGroup(groups.iterator().next()),true);
       app.goTo().HomePage();
     }
   }

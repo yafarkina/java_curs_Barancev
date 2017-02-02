@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import com.thoughtworks.xstream.XStream;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import ru.stqa.javaCursBarancev.addressbook.model.GroupData;
 import ru.stqa.javaCursBarancev.addressbook.model.Groups;
 import ru.stqa.javaCursBarancev.addressbook.model.KontactData;
 import ru.stqa.javaCursBarancev.addressbook.model.Kontacts;
@@ -70,6 +71,10 @@ public class KontactCreationTests extends TestBase {
   @Test
   public void testKontactCreationWithGroup() {
     app.goTo().HomePage();
+    if (app.db().groups().size() == 0) {
+      app.goTo().GroupPage();
+      app.Group().create(new GroupData().withName("test1"));
+    }
     Groups groups = app.db().groups();
     Kontacts befor = app.db().kontacts();
     app.goTo().KontactPage();
