@@ -55,18 +55,18 @@ public class KontactCreationTests extends TestBase {
     }
   }
 
-  @Test(dataProvider = "validGroupsFromJson")
-  public void testKontactCreation(KontactData kontact) {
-    app.goTo().HomePage();
-    Kontacts befor = app.db().kontacts();
-    app.goTo().KontactPage();
-    app.Kontact().create(kontact, false); //данные берутся из файла
-    app.goTo().HomePage();
-    assertThat(app.Kontact().getKontactCount(), equalTo(befor.size() + 1));
-    Kontacts after = app.db().kontacts();
-    assertThat(after, equalTo
-            (befor.withAdded(kontact.withId(after.stream().mapToInt(k -> k.getId()).max().getAsInt()))));
-  }
+//  @Test(dataProvider = "validGroupsFromJson")
+ // public void testKontactCreation(KontactData kontact) {
+ //   app.goTo().HomePage();
+ //   Kontacts befor = app.db().kontacts();
+//    app.goTo().KontactPage();
+//    app.Kontact().create(kontact, false); //данные берутся из файла
+//    app.goTo().HomePage();
+ //   assertThat(app.Kontact().getKontactCount(), equalTo(befor.size() + 1));
+//    Kontacts after = app.db().kontacts();
+//    assertThat(after, equalTo
+ //           (befor.withAdded(kontact.withId(after.stream().mapToInt(k -> k.getId()).max().getAsInt()))));
+  //}
 
   @Test
   public void testKontactCreationWithGroup() {
